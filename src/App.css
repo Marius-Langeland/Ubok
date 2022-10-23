@@ -1,10 +1,14 @@
-/* #region Apply themes */
+/* #region APPLY THEMES */
 
-
+.body{
+    background-color: var(--clr-background-100);
+}
 
 /* #endregion */
 
-/* #region Top-bar */
+
+
+/* #region TOP-BAR */
 
 .top-bar{
     display: flex;
@@ -12,6 +16,31 @@
 
 .top-bar .logo{
     height: calc(4vw + 30px);
+}
+
+/* #endregion */
+
+
+
+/* #region RESULTS */
+
+
+
+
+
+@keyframes favorite-fill {
+    from {font-variation-settings: 'FILL' 0;}
+    to {font-variation-settings: 'FILL' 1;}
+}
+
+.favorite{
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    animation-duration: .25s;
+}
+.favorite.enabled{
+    animation-direction:alternate;
+    animation-name: favorite-fill;
 }
 
 /* #endregion */

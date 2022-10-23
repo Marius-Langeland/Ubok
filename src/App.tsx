@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
+import './themes/lighttheme.css'
 import './App.css';
 
-// OBJECTS
+// #region OBJECTS
 
-interface IconType{type: string;}
+interface IconType{
+  type: string;
+  toggle?: boolean;
+  onClick?: React.MouseEventHandler<HTMLSpanElement> | undefined;
+}
 function Icon(props : IconType){
-  return <span className={`material-symbols-outlined ${props.type}`}>{props.type}</span>;
+  return (
+      <span onClick={props.onClick} 
+            className={`material-symbols-outlined ${props.type}${props.toggle ? " enabled" : ""} `}>
+        {props.type}
+      </span>
+  );
 }
 
 interface Book{
@@ -16,6 +26,12 @@ interface Book{
   desc: string;
 }
 function Book(props: Book){
+  const [favorite, setFavorite] = useState(false);
+
+  let toggleFavorite = () => {
+    setFavorite((prev) => !prev);
+  }
+
   return(
     <span className="book" id={props.title}>
       <img src={props.coversrc} alt={`${props.title} by ${props.author}`} />
@@ -23,7 +39,7 @@ function Book(props: Book){
       <span className="book-title">{props.title}</span>
       <p className="book-description">{props.desc}</p>
       <div className="book-buttons">
-        <Icon type='favorite'/>
+        <Icon onClick={toggleFavorite} toggle={favorite} type='favorite'/>
       </div>
     </span>
   );
@@ -41,7 +57,9 @@ function Tick(props: Category){
   );
 }
 
-// APP
+// #endregion
+
+// #region APP
 
 function App() {
   return (
@@ -118,6 +136,8 @@ function Result(){
     </section>
   );
 }
+
+// #endregion
 
 export default App;
 
