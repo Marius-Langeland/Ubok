@@ -1,0 +1,17 @@
+/* #region Apply themes */
+
+
+
+/* #endregion */
+
+/* #region Top-bar */
+
+.top-bar{
+    display: flex;
+}
+
+.top-bar .logo{
+    height: calc(4vw + 30px);
+}
+
+/* #endregion */
