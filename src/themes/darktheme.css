@@ -1,0 +1,8 @@
+:root{
+    --clr-background-900: rgb(17, 18, 19);
+    --clr-background-700: rgb(21, 29, 37);
+    --clr-background-400: rgb(30, 42, 54);
+    --clr-background-100: rgb(71, 93, 117);
+
+    --clr-text: rgb(255, 237, 222);
+}
