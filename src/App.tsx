@@ -1,16 +1,53 @@
-import React, { ReactPropTypes } from 'react';
+import React from 'react';
+import logo from './logo.svg';
 
-interface IconType{type: string}
+// OBJECTS
+
+interface IconType{type: string;}
 function Icon(props : IconType){
   return <span className={`material-symbols-outlined ${props.type}`}>{props.type}</span>;
 }
 
+interface Book{
+  author: string;
+  title: string;
+  coversrc: string;
+  desc: string;
+}
+function Book(props: Book){
+  return(
+    <span className="book" id={props.title}>
+      <img src={props.coversrc} alt={`${props.title} by ${props.author}`} />
+      <span className="book-author">{`${props.author}'s`}</span>
+      <span className="book-title">{props.title}</span>
+      <p className="book-description">{props.desc}</p>
+      <div className="book-buttons">
+        <Icon type='favorite'/>
+      </div>
+    </span>
+  );
+}
+
+interface Category{
+  text : string;
+}
+function Tick(props: Category){
+  return(
+    <span className="tick">
+      <Icon type='remove'/>
+      <span className="category">{props.text}</span>
+    </span>
+  );
+}
+
+// APP
+
 function App() {
   return (
     <>
-        <Navbar />
-        <Filtering />
-        <Result />
+      <Navbar />
+      <Filtering />
+      <Result />
     </>
   );
 }
@@ -20,7 +57,7 @@ function Navbar(){
   function Logo(){
     return(
       <a className='link-home' href=''>
-        <img className='logo' alt='Logo' />
+        <img src={logo} className='logo' alt='Logo' />
       </a>
     );
   }
@@ -60,6 +97,7 @@ function Filtering(){
     return(
       <div className="categories">
         <Icon type='filter_list'/>
+        <Tick text='Non-fiction'/>
       </div>
     );
   }
@@ -74,8 +112,9 @@ function Filtering(){
 
 function Result(){
   return(
-    <>
-    </>
+    <section className="results">
+      <Book author='Frank Herbert' title='Dune' coversrc='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+    </section>
   );
 }
 
