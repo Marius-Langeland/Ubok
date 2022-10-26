@@ -1,23 +1,9 @@
 import React, {useState} from 'react';
-import Icon from './Icons'
-import Book from './Books'
+import Icon from './components/Icons'
+import Book from './components/Books'
+import Tick from './components/Ticks'
 import logo from './logo.svg';
 import './App.css';
-
-// #region OBJECTS
-
-function Tick(props : any){
-  return(
-    <span className="tick">
-      <Icon type='remove'/>
-      <span className="category">{props.text}</span>
-    </span>
-  );
-}
-
-// #endregion
-
-// #region APP
 
 function App() {
   return (
@@ -74,7 +60,9 @@ function Filtering(){
     return(
       <div className="category-input">
         <Icon type='filter_list'/>
-        <Tick text='Non-fiction'/>
+        <div className="category-list">
+          <Tick text='Non-fiction'/>
+        </div>
       </div>
     );
   }
@@ -94,8 +82,6 @@ function Result(){
     </section>
   );
 }
-
-// #endregion
 
 export default App;
 

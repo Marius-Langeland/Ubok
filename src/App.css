@@ -42,18 +42,28 @@ body{
     flex-direction: column;
 }
 
+/* ----SEARCH---- */
+
 .filtering .search-input{
     display: flex;
     align-items: center;
 }
 
 .filtering .search-input .search-icon{
-    font-size: 2em;
+
 }
 
 .filtering .search-input .search-text{
     margin-left: 1em;
     flex-grow: 1;
+}
+
+
+/* ----CATEGORY---- */
+
+.filtering .category-input{
+    display: flex;
+    align-items: center;
 }
 
 /* #endregion */
