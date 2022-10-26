@@ -16,24 +16,26 @@ function App() {
 }
 
 function Topbar(){
+  const [theme, setTheme] = useState('light');
 
   function Logo(){
     return(
-      <a className='link-home' href=''>
+      <a className='link-home' href='/'>
         <img src={logo} className='logo' alt='Logo' />
       </a>
     );
   }
+  
   function Configs(){
-    const [theme, setTheme] = useState([]);
-
     useEffect(() => {
-        setTheme(JSON.parse(localStorage.getItem('theme') ?? 'light'));
+      const value = localStorage.getItem('theme');
+      if(value != null)
+        setTheme(JSON.parse(value));
     }, [])
 
     useEffect(() => {
       localStorage.setItem('theme', JSON.stringify(theme));
-    }, [theme]);
+    }, [theme])
 
     return(
       <span className='config-buttons'>
