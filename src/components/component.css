@@ -1,0 +1,7 @@
+/* CATEGORY TICKS */
+
+.tick{
+    display: flex;
+    border-radius: 100em;
+    background-color: var(--clr-background-100);
+}

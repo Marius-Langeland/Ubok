@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar />
       <Filtering />
-      <Result />
+      <Result layout="list"/>
     </>
   );
 }
@@ -62,6 +62,12 @@ function Filtering(){
         <Icon type='filter_list'/>
         <div className="category-list">
           <Tick text='Non-fiction'/>
+          <Tick text='Action'/>
+          <Tick text='History'/>
+          <Tick text='Drawing'/>
+          <Tick text='Autobiography'/>
+          <Tick text='Childhood'/>
+          <Tick text='School'/>
         </div>
       </div>
     );
@@ -75,9 +81,14 @@ function Filtering(){
   );
 }
 
-function Result(){
+function Result(props: any){
+  const layout = props.layout === "" ? "" : `layout-${props.layout}`;
   return(
-    <section className="results">
+    <section className={`results ${layout}`}>
+      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
       <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
     </section>
   );

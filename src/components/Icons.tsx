@@ -1,4 +1,5 @@
 import React from 'react';
+import './component.css'
 
 interface IconType{
     type: string;
