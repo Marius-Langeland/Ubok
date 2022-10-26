@@ -8,7 +8,7 @@ interface IconType{
 function Icon(props : IconType){
     return (
         <span onClick={props.onClick} 
-              className={`material-symbols-outlined ${props.type}${props.toggle ? " enabled" : ""} `}>
+              className={`material-symbols-outlined ${props.type}-icon${props.toggle ? " enabled" : ""} `}>
           {props.type}
         </span>
     );

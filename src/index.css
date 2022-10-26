@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.material-symbols-outlined:not(.search){cursor: pointer;}
+.material-symbols-outlined:not(.search-icon){cursor: pointer;}
 .material-symbols-outlined {
   user-select: none;
   font-variation-settings:
