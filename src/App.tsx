@@ -2,15 +2,11 @@ import React, {useState} from 'react';
 import Icon from './Icons'
 import Book from './Books'
 import logo from './logo.svg';
-import './themes/lighttheme.css'
 import './App.css';
 
 // #region OBJECTS
 
-interface Category{
-  text : string;
-}
-function Tick(props: Category){
+function Tick(props : any){
   return(
     <span className="tick">
       <Icon type='remove'/>
@@ -67,16 +63,16 @@ function Filtering(){
 
   function Search(){
     return(
-      <div className="search">
+      <div className="search-input">
         <Icon type='search'/>
-        <input type="text" name='book-name' className='book-name' placeholder='Search title, author, topic...'/>
+        <input type="text" name='search-text' className='search-text' placeholder='Search title, author, topic...'/>
       </div>
     );
   }
 
   function Categories(){
     return(
-      <div className="categories">
+      <div className="category-input">
         <Icon type='filter_list'/>
         <Tick text='Non-fiction'/>
       </div>

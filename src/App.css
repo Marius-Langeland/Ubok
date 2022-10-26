@@ -1,10 +1,13 @@
-/* #region APPLY THEMES */
-
-.body{
-    background-color: var(--clr-background-100);
+body{
+    display: flex;
+    justify-content: center;
 }
 
-/* #endregion */
+#root{
+    width: 100%;
+    max-width: 1500px;
+    padding: 1rem;
+}
 
 
 
@@ -12,10 +15,45 @@
 
 .top-bar{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .top-bar .logo{
     height: calc(4vw + 30px);
+}
+
+.top-bar .config-buttons{
+    display: flex;
+    justify-content: space-between;
+
+    flex-grow: 1;
+    max-width: 12%;
+}
+
+/* #endregion */
+
+
+
+/* #region SEARCH-BAR */
+
+.filtering{
+    display: flex;
+    flex-direction: column;
+}
+
+.filtering .search-input{
+    display: flex;
+    align-items: center;
+}
+
+.filtering .search-input .search-icon{
+    font-size: 2em;
+}
+
+.filtering .search-input .search-text{
+    margin-left: 1em;
+    flex-grow: 1;
 }
 
 /* #endregion */
@@ -25,9 +63,7 @@
 /* #region RESULTS */
 
 
-
-
-
+/* ----BOOK FAVORITE-ICON----  */
 @keyframes favorite-fill {
     from {font-variation-settings: 'FILL' 0;}
     to {font-variation-settings: 'FILL' 1;}
