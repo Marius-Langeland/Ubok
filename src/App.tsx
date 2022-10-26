@@ -1,49 +1,11 @@
 import React, {useState} from 'react';
+import Icon from './Icons'
+import Book from './Books'
 import logo from './logo.svg';
 import './themes/lighttheme.css'
 import './App.css';
 
 // #region OBJECTS
-
-interface IconType{
-  type: string;
-  toggle?: boolean;
-  onClick?: React.MouseEventHandler<HTMLSpanElement> | undefined;
-}
-function Icon(props : IconType){
-  return (
-      <span onClick={props.onClick} 
-            className={`material-symbols-outlined ${props.type}${props.toggle ? " enabled" : ""} `}>
-        {props.type}
-      </span>
-  );
-}
-
-interface Book{
-  author: string;
-  title: string;
-  coversrc: string;
-  desc: string;
-}
-function Book(props: Book){
-  const [favorite, setFavorite] = useState(false);
-
-  let toggleFavorite = () => {
-    setFavorite((prev) => !prev);
-  }
-
-  return(
-    <span className="book" id={props.title}>
-      <img src={props.coversrc} alt={`${props.title} by ${props.author}`} />
-      <span className="book-author">{`${props.author}'s`}</span>
-      <span className="book-title">{props.title}</span>
-      <p className="book-description">{props.desc}</p>
-      <div className="book-buttons">
-        <Icon onClick={toggleFavorite} toggle={favorite} type='favorite'/>
-      </div>
-    </span>
-  );
-}
 
 interface Category{
   text : string;
@@ -132,7 +94,7 @@ function Filtering(){
 function Result(){
   return(
     <section className="results">
-      <Book author='Frank Herbert' title='Dune' coversrc='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
     </section>
   );
 }
