@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Icon from './components/Icons'
 import Book from './components/Books'
 import Tick from './components/Ticks'
@@ -8,14 +8,14 @@ import './App.css';
 function App() {
   return (
     <>
-      <Navbar />
+      <Topbar />
       <Filtering />
       <Result layout="list"/>
     </>
   );
 }
 
-function Navbar(){
+function Topbar(){
 
   function Logo(){
     return(
@@ -25,11 +25,21 @@ function Navbar(){
     );
   }
   function Configs(){
+    const [theme, setTheme] = useState([]);
+
+    useEffect(() => {
+        setTheme(JSON.parse(localStorage.getItem('theme') ?? 'light'));
+    }, [])
+
+    useEffect(() => {
+      localStorage.setItem('theme', JSON.stringify(theme));
+    }, [theme]);
+
     return(
       <span className='config-buttons'>
         <span className='theme-switches'>
-          <Icon type='dark_mode'/>
-          <Icon type='light_mode'/>
+          <Icon type='dark_mode' onClick={() => setTheme('dark')}/>
+          <Icon type='light_mode' onClick={() => setTheme('light')}/>
         </span>
         <Icon type='language'/>
         <Icon type='person'/>
