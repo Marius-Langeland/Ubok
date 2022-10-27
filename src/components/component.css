@@ -1,11 +1,13 @@
+
+
 /* CATEGORY TICKS */
 
 .tick{
     display: flex;
     justify-content: space-around;
     border-radius: 100em;
-    background-color: var(--clr-accent);
-    border: 2px solid var(--clr-accent);
+    background-color: var(--clr-background-100);
+    border: 2px solid var(--clr-background-500);
     color: var(--clr-primary);
     margin: .2rem;
     padding: .2rem;
