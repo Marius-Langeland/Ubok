@@ -26,9 +26,7 @@ body{
 .top-bar .config-buttons{
     display: flex;
     justify-content: space-between;
-
-    flex-grow: 1;
-    max-width: 12%;
+    width: 110px;
 }
 
 /* #endregion */

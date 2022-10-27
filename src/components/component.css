@@ -2,6 +2,14 @@
 
 .tick{
     display: flex;
+    justify-content: space-around;
     border-radius: 100em;
-    background-color: var(--clr-background-100);
+    background-color: var(--clr-background-500);
+    border: 2px solid var(--clr-background-300);
+    margin: .2rem;
+    padding: .2rem;
+}
+
+.tick .category{
+    padding: 0 .5rem 0 0;
 }
