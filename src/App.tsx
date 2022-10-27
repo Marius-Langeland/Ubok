@@ -16,7 +16,7 @@ function App() {
 }
 
 function Topbar(){
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme') ?? 'light'));
 
   function Logo(){
     return(
@@ -35,13 +35,17 @@ function Topbar(){
 
     useEffect(() => {
       localStorage.setItem('theme', JSON.stringify(theme));
+      document.body.dataset.theme = theme;
     }, [theme])
 
     return(
       <span className='config-buttons'>
         <span className='theme-switches'>
-          <Icon type='dark_mode' onClick={() => setTheme('dark')}/>
-          <Icon type='light_mode' onClick={() => setTheme('light')}/>
+          {
+            theme == 'dark'
+            ?<Icon type='dark_mode' onClick={() => setTheme('light')}/>
+            :<Icon type='light_mode' onClick={() => setTheme('dark')}/>
+          }
         </span>
         <Icon type='language'/>
         <Icon type='person'/>

@@ -15,3 +15,7 @@
 
     --clr-text: rgb(255, 237, 222);
 }
+
+body{
+    color: var(--clr-text);
+}
