@@ -3,6 +3,10 @@
     --clr-background-700: rgb(240, 236, 223);
     --clr-background-500: rgb(196, 216, 238);
     --clr-background-300: rgb(132, 155, 179);
+    --clr-background-100: rgb(132, 155, 179);
+
+    --clr-primary: #fff;
+    --clr-accent: #000;
     
     --clr-text: rgb(0, 0, 0);
 }
@@ -12,6 +16,10 @@
     --clr-background-700: rgb(21, 29, 37);
     --clr-background-500: rgb(30, 42, 54);
     --clr-background-300: rgb(71, 93, 117);
+    --clr-background-100: rgb(71, 93, 117);
+
+    --clr-primary: #000;
+    --clr-accent: #fff;
 
     --clr-text: rgb(255, 237, 222);
 }
