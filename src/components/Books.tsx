@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from './Icons';
 
 interface IBook{
@@ -19,7 +19,7 @@ function Book(props: IBook){
               <div>
                 <div className="book-title-author">
                   <span className="book-title">{props.title}</span>
-                  <span className="book-author">by {props.author}</span>
+                  <span className="book-author"> by {props.author}</span>
                 </div>
                 <span className="book-description">Description: <br /> {props.desc}</span>
                 <div className="book-icons">

@@ -26,7 +26,7 @@ function Topbar(){
   }
   
   function Configs(){
-    const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme') ?? 'light'));
+    const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme') ?? JSON.stringify('light')));
 
     useEffect(() => {
       localStorage.setItem('theme', JSON.stringify(theme));
@@ -93,7 +93,7 @@ function Filtering(){
 }
 
 function Result(){
-  const [layout, setLayout] = useState(JSON.parse(localStorage.getItem('layout') ?? 'layout-grid'))
+  const [layout, setLayout] = useState(JSON.parse(localStorage.getItem('layout') ?? JSON.stringify("layout-grid")))
 
   useEffect(() => {
     localStorage.setItem('layout', JSON.stringify(layout));
