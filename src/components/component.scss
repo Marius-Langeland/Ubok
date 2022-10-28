@@ -3,6 +3,7 @@
     justify-content: space-around;
     border-radius: 100em;
     border: 2px solid var(--clr-background-300);
+    transition: border-color 200ms ease;
     margin: .2rem;
     padding: .2rem;
 
@@ -30,6 +31,10 @@
     }
     .book-title{
         font-size: 3em;
+    }
+    img{
+        width: 20%;
+        max-width: 200px;
     }
 }
 
