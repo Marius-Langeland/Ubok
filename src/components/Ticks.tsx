@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './Icons';
-import './component.css';
+import './component.scss';
 
 function Tick(props : any){
     return(

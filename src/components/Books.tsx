@@ -6,24 +6,26 @@ interface IBook{
     title: string;
     coverURL: string;
     desc: string;
+
+    layout? : string;
 }
 
 function Book(props: IBook){
     const [favorite, setFavorite] = useState(false);
-  
-    let toggleFavorite = () => {
-      setFavorite((prev) => !prev);
-    }
 
     return(
       <span className="book" id={props.title}>
-        <img src={props.coverURL} alt={`${props.title} by ${props.author}`} />
-        <span className="book-author">{`${props.author}'s`}</span>
-        <span className="book-title">{props.title}</span>
-        <p className="book-description">{props.desc}</p>
-        <div className="book-buttons">
-          <Icon onClick={toggleFavorite} toggle={favorite} type='favorite'/>
-        </div>
+              <img src={props.coverURL} alt={`${props.title} by ${props.author}`} />
+              <div>
+                <div className="book-title-author">
+                  <span className="book-title">{props.title}</span>
+                  <span className="book-author">by {props.author}</span>
+                </div>
+                <span className="book-description">Description: <br /> {props.desc}</span>
+                <div className="book-icons">
+                  <Icon onClick={() => setFavorite(!favorite)} toggle={favorite} type='favorite'/>
+                </div>
+              </div>
       </span>
     );
 }
