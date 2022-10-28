@@ -26,4 +26,5 @@
 
 body{
     color: var(--clr-text);
+    transition: background-color 300ms ease, color 300ms ease;
 }
