@@ -6,8 +6,6 @@ interface IBook{
     title: string;
     coverURL: string;
     desc: string;
-
-    displayMode?: string,
 }
 
 function Book(props: IBook){

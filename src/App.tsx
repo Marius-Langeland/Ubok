@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Icon from './components/Icons'
 import Book from './components/Books'
 import Tick from './components/Ticks'
-import logo from './logo.svg';
+import { ReactComponent as SiteLogo } from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,28 +10,23 @@ function App() {
     <>
       <Topbar />
       <Filtering />
-      <Result layout="list"/>
+      <Result />
     </>
   );
 }
 
 function Topbar(){
-  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme') ?? 'light'));
 
   function Logo(){
     return(
       <a className='link-home' href='/'>
-        <img src={logo} className='logo' alt='Logo' />
+        <SiteLogo className='logo'/>
       </a>
     );
   }
   
   function Configs(){
-    useEffect(() => {
-      const value = localStorage.getItem('theme');
-      if(value != null)
-        setTheme(JSON.parse(value));
-    }, [])
+    const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme') ?? 'light'));
 
     useEffect(() => {
       localStorage.setItem('theme', JSON.stringify(theme));
@@ -42,7 +37,7 @@ function Topbar(){
       <span className='config-buttons'>
         <span className='theme-switches'>
           {
-            theme == 'dark'
+            theme === 'dark'
             ?<Icon type='dark_mode' onClick={() => setTheme('light')}/>
             :<Icon type='light_mode' onClick={() => setTheme('dark')}/>
           }
@@ -97,15 +92,38 @@ function Filtering(){
   );
 }
 
-function Result(props: any){
-  const layout = props.layout === "" ? "" : `layout-${props.layout}`;
+function Result(){
+  const [layout, setLayout] = useState(JSON.parse(localStorage.getItem('layout') ?? 'layout-grid'))
+
+  useEffect(() => {
+    localStorage.setItem('layout', JSON.stringify(layout));
+  }, [layout]);
+
   return(
-    <section className={`results ${layout}`}>
-      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
-      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
-      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
-      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
-      <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+    <section className="filter-results">
+      <div className="display-mode">
+        {
+          layout === 'layout-list'
+          ? <Icon type='density_medium' onClick={() => setLayout('layout-grid')} />
+          : <Icon type='dataset' onClick={() => setLayout('layout-list')}/>
+        }
+      </div>
+      <div className={`results ${layout}`}>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+        <Book author='Frank Herbert' title='Dune' coverURL='https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217' desc='lorem ipsum dolor sit amet'/>
+      </div>
     </section>
   );
 }

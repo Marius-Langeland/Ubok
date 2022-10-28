@@ -1,18 +1,31 @@
-
-
 /* CATEGORY TICKS */
 
 .tick{
     display: flex;
     justify-content: space-around;
     border-radius: 100em;
-    background-color: var(--clr-background-100);
-    border: 2px solid var(--clr-background-500);
-    color: var(--clr-primary);
+    border: 2px solid var(--clr-background-300);
     margin: .2rem;
     padding: .2rem;
 }
 
 .tick .category{
     padding: 0 .5rem 0 0;
+}
+
+/* BOOKS */
+
+.book{
+    display: flex;
+
+    transition: background-color 200ms ease;
+}
+.layout-list .book{
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--clr-background-700);
+}
+
+.layout-list .book:hover{
+    background-color: var(--clr-background-900);
 }

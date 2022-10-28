@@ -10,7 +10,6 @@ body{
 }
 
 
-
 /* #region TOP-BAR */
 
 .top-bar{
@@ -21,6 +20,7 @@ body{
 
 .top-bar .logo{
     height: calc(4vw + 30px);
+    fill: var(--clr-background-300);
 }
 
 .top-bar .config-buttons{
