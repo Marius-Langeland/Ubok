@@ -4,8 +4,11 @@ import Book from './components/Books'
 import Tick from './components/Ticks'
 import { ReactComponent as SiteLogo } from './logo.svg';
 import './App.scss';
+import BookPage from './Book-page';
 
 function App() {
+
+
   return (
     <>
       <Topbar />
