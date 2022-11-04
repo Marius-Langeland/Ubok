@@ -49,6 +49,12 @@
     }
 }
 
+.book{
+    cursor: pointer;
+
+    .book-description{cursor:auto;}
+}
+
 @keyframes favorite-fill {
     from {font-variation-settings: 'FILL' 0;}
     to {font-variation-settings: 'FILL' 1;}

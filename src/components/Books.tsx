@@ -5,12 +5,12 @@ function Book(props: any){
     const [favorite, setFavorite] = useState(props.book.fav);
 
     return(
-      <span className="book" id={props.book.title}>
-              <img src={props.book.coverSrc} alt={`${props.book.title} by ${props.book.author}`} />
+      <span className="book" id={props.book.title} onClick={(e) => {if(e.target == e.currentTarget) props.inspect();}}>
+              <img onClick={props.inspect} src={props.book.coverSrc} alt={`${props.book.title} by ${props.book.author}`} />
               <div>
                 <div className="book-title-author">
-                  <span className="book-title">{props.book.title}</span>
-                  <span className="book-author"> by {props.book.author}</span>
+                  <span onClick={props.inspect} className="book-title">{props.book.title}</span>
+                  <span onClick={props.inspect} className="book-author"> by {props.book.author}</span>
                 </div>
                 <span className="book-description">Description: <br /> {props.book.desc}</span>
                 <div className="book-icons">

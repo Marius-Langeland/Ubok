@@ -1,4 +1,12 @@
+.book-page.hidden{
+    opacity: 0%;
+    pointer-events: none;
+}
+
 .book-page{
+    opacity: 100%;
+    transition: opacity .5s ease;
+    
     background: linear-gradient(var(--clr-transparent), var(--clr-background-700) 15%);
 
     position: fixed;

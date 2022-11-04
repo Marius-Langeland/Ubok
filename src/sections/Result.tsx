@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Icon from '../components/Icons'
 import Book from '../components/Books'
+import BookPage from './Book-page';
 
 let books = [
     {
@@ -14,15 +15,18 @@ let books = [
     },
   ];
   
-  function Result(){
+  function Result(props: any){
     const [layout, setLayout] = useState(JSON.parse(localStorage.getItem('layout') ?? JSON.stringify("layout-grid")));
-  
+    const [inspectedBook, setInspectedBook] = useState(0);
+
     useEffect(() => {
       localStorage.setItem('layout', JSON.stringify(layout));
     }, [layout]);
     
-    let bookNodes = books.map(book => <Book key={book.id} book={book} />);
+    let bookNodes = books.map((book, i) => <Book inspect={() => setInspectedBook(i)} key={book.id} book={book} />);
   
+    let isInspecting = () => (inspectedBook >= 0 && inspectedBook < books.length);
+
     return(
       <section className="filter-results">
         <div className="display-mode">
@@ -32,9 +36,12 @@ let books = [
             : <Icon type='dataset' onClick={() => setLayout('layout-list')}/>
           }
         </div>
+
         <div className={`results ${layout}`}>
             {bookNodes}
         </div>
+
+        <BookPage book={isInspecting() ? books[inspectedBook] : {}} hide={() => setInspectedBook(-1)} hidden={!isInspecting()} />
       </section>
     );
   }
