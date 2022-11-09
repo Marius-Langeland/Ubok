@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Icon from '../components/Icons'
 import Book from '../components/Books'
-import BookPage from './Book-page';
+import BookPage from '../pages/Book-page';
 
 let books = [
     {
@@ -12,6 +12,30 @@ let books = [
       desc: "The quick brown fox",
       published_ddmmyy: [28, 4, 2017],
       fav: true
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
     },
   ];
   

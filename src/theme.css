@@ -1,8 +1,8 @@
 :root{
     --clr-background-900: rgb(255, 248, 244);
-    --clr-background-700: rgb(240, 236, 223);
-    --clr-background-500: rgb(196, 216, 238);
-    --clr-background-300: rgb(132, 155, 179);
+    --clr-background-700: rgb(240, 229, 218);
+    --clr-background-500: rgb(231, 219, 219);
+    --clr-background-300: rgb(156, 166, 219);
     --clr-background-100: rgb(132, 155, 179);
 
 
@@ -14,10 +14,10 @@
 }
 
 [data-theme='dark']{
-    --clr-background-900: rgb(17, 18, 19);
-    --clr-background-700: rgb(21, 29, 37);
-    --clr-background-500: rgb(30, 42, 54);
-    --clr-background-300: rgb(71, 93, 117);
+    --clr-background-900: rgb(35, 38, 77);
+    --clr-background-700: rgb(35, 27, 45);
+    --clr-background-500: rgb(15, 34, 53);
+    --clr-background-300: rgb(169, 143, 195);
     --clr-background-100: rgb(71, 93, 117);
 
     --clr-transparent: rgba(19, 22, 26, 0.95);

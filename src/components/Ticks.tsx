@@ -5,7 +5,7 @@ import './component.scss';
 function Tick(props : any){
     return(
       <span className="tick">
-        <Icon type='remove'/>
+        <Icon type='do_not_disturb_on'/>
         <span className="category">{props.text}</span>
       </span>
     );
