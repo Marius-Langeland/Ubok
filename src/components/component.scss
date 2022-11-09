@@ -1,14 +1,12 @@
 .tick{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
     border-radius: 100em;
-    border: 2px solid var(--clr-background-300);
     transition: border-color 200ms ease;
-    margin: .2rem;
-    padding: .2rem;
+    margin: .3rem;
 
     .category{
-        padding: 0 .5rem 0 0;
+        padding: 0 .5rem 0 .2rem;
     }
 }
 
@@ -36,12 +34,31 @@
             transition: opacity .2s ease;
         }
     }
+    .book>div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .book:hover{
         background-color: var(--clr-background-500);
     }
     .book-title{
         font-size: min(6vw, 3rem);
     }
+    .book-icons{
+        display: grid;
+        width: fit-content;
+
+        transition: box-shadow 200ms ease;
+        background-color: var(--clr-background-700);
+        padding: .5rem;
+        border-radius: .5rem;
+    }
+    .book-icons:hover{
+        box-shadow: 0 0 35px -10px var(--clr-background-300);
+    }
+
     img{
         width: 20%;
         max-width: 200px;
@@ -66,7 +83,7 @@
 
 .book:hover{
     background-color: var(--clr-background-700);
-    box-shadow: 0 0 10px 2px var(--clr-background-300);
+    box-shadow: 0 0 12px 1px var(--clr-background-300);
 }
 
 .book{
