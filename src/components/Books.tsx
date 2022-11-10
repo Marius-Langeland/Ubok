@@ -10,18 +10,16 @@ function Book(props: any){
               <div>
                 <div className="book-title-author">
                   <span onClick={props.inspect} className="book-title">{props.book.title}</span>
-                  <span> by
-                    <span onClick={props.inspect} className="book-author"> {props.book.author}</span>
+                  <span> by <span onClick={props.inspect} className="book-author">{props.book.author}</span>
                   </span>
                 </div>
-                <span className="book-description">Description: <br /> {props.book.desc}</span>
                 <div className="book-icons">
                   <Icon onClick={() => setFavorite(!favorite)} toggle={favorite} type='favorite'/>
                   <Icon type="delete"/>
                 </div>
+                <hr />
+                <span className="book-description">{props.book.desc}</span>
               </div>
-
-              <Icon type="chevron_right"/>
       </span>
     );
 }

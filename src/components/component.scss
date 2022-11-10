@@ -37,7 +37,7 @@
     .book>div{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        width: 100%;
     }
 
     .book:hover{
@@ -48,15 +48,22 @@
     }
     .book-icons{
         display: grid;
+        grid-gap: 1rem;
         width: fit-content;
 
+        grid-template-columns: 1fr 1fr;
+
         transition: box-shadow 200ms ease;
-        background-color: var(--clr-background-700);
-        padding: .5rem;
         border-radius: .5rem;
+        padding: .5rem;
     }
     .book-icons:hover{
         box-shadow: 0 0 35px -10px var(--clr-background-300);
+    }
+
+    hr{
+        width: 100%;
+        color: var(--clr-background-500);
     }
 
     img{
