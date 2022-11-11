@@ -24,40 +24,10 @@
     border-top: unset;
     border-bottom: unset;
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
-    grid-template-columns: auto 1fr 3fr;
-
-    grid-template-areas:
-    "tools tools tools"
-    "cover title descr"
-    "cover title descr"
-    "cover .     .    ";
-
-    .tools{
-        grid-area: tools;
-        display: flex;
-        align-items: flex-start;
-
-        .close-icon{
-            font-size: 2em;
-            border-radius: 100%;
-            background-color: var(--clr-background-700);
-            border: 2px solid var(--clr-background-300)
-        }
-        .close-icon:hover{
-            background-color: var(--clr-background-300);
-            transform: rotate(90deg);
-            transition: background-color .15s ease, transform .2s ease;
-        }
-    }
-    #book-cover{
-        grid-area: cover;
-        border-radius: 8px;
-    }
-    h3{
-        grid-area: title;
-        text-align: left;
+    img{
     }
 }
 

@@ -1,0 +1,52 @@
+.layout-list{
+    .book-title-author{
+        display: flex;
+        flex-direction: column;
+    }
+    .book{
+        padding: 1rem;
+        border-radius: 1rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: min-content auto 1fr;
+        grid-template-rows: auto 1fr auto;
+
+        grid-template-areas: 
+        "image title title"
+        "image .     descr"
+        "image tools descr";
+    }
+    .book-title{grid-area: title;}
+    img{grid-area: image;}
+    .book-title-author{grid-area: title}
+    .book-icons{grid-area: tools;}
+    .book-description{grid-area: descr;}
+
+    .book:hover{
+        background-color: var(--clr-background-500);
+    }
+    .book-title{
+        font-size: min(5vw, 3rem);
+        
+    }
+    .book-icons{
+        display: grid;
+        grid-gap: 1rem;
+        width: fit-content;
+
+        grid-template-columns: 1fr 1fr;
+
+        transition: box-shadow 200ms ease;
+        border-radius: .5rem;
+        padding: .5rem;
+    }
+    .book-icons:hover{
+        box-shadow: 0 0 35px -10px var(--clr-background-300);
+    }
+
+    img{
+        width: 20vw;
+        max-width: 200px;
+        border-radius: .5rem;
+    }
+}
