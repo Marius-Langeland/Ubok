@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Ubok/static/css/main.f75ec25b.css",
+    "main.js": "/Ubok/static/js/main.32d2644a.js",
+    "index.html": "/Ubok/index.html",
+    "static/media/logo.svg": "/Ubok/static/media/logo.3f61a473746e6004b1572508ee340f6a.svg",
+    "main.f75ec25b.css.map": "/Ubok/static/css/main.f75ec25b.css.map",
+    "main.32d2644a.js.map": "/Ubok/static/js/main.32d2644a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f75ec25b.css",
+    "static/js/main.32d2644a.js"
+  ]
+}
