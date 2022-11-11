@@ -8,8 +8,8 @@ function BookPage(props: any){
             <div className='tools'>
                 <Icon type='close' onClick={props.hide}/>
             </div>
-            <img id='book-cover' src={props.book.coverSrc} alt="Book cover" />
             <h3>{props.book.title}</h3>
+            <img id='book-cover' src={props.book.coverSrc} alt="Book cover" />
         </section>
     );
 }
