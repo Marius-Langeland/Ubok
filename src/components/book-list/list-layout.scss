@@ -5,21 +5,24 @@
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: auto auto 1fr;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto min(calc(3vw + 80px), 110px) 1fr;
 
         grid-template-areas: 
         "image title title"
-        "image .     descr"
-        "image tools descr";
+        "image tools descr"
+        "image .     descr";
 
         @media (max-width: 400px) {
-            grid-template-rows: 1fr auto;
+            grid-template-rows: auto auto;
             grid-template-areas:
-            "image title title"
-            "image tools .";
+            "image title"
+            "image tools";
             
             .book-title-author{display: unset;}
             .book-description{display: none;}
+            .book-icons{
+                flex-direction: row;
+            }
         }
     }
     img{grid-area: image;}
@@ -46,18 +49,24 @@
         font-style: italic;
     }
     .book-icons{
-        display: grid;
-        grid-gap: 1rem;
-        width: fit-content;
-
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         transition: box-shadow 200ms ease;
         border-radius: .5rem;
-        padding: .5rem;
+        padding: .6rem;
+        margin: .4rem;
     }
     .book-icons:hover{
         box-shadow: 0 0 35px -10px var(--clr-background-300);
+    }
+
+    .book-description{
+        margin-top: 1rem;
+        max-width: calc(50% + 20rem);
+        text-align: justify;
+        text-justify: distribute;
     }
 
     img{

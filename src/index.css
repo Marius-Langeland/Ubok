@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: var(--clr-background-900);
 }
 
 code {
@@ -24,4 +23,4 @@ code {
   'opsz' 48;
 }
 
-*{box-sizing: border-box;}
+*{box-sizing: border-box !important;}
