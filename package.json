@@ -1,7 +1,7 @@
 {
   "name": "ubok",
   "version": "0.1.0",
-  "homepage": "https://marius-langeland.github.io/Ubook/Library/v2",
+  "homepage": "https://marius-langeland.github.io/Ubok/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
