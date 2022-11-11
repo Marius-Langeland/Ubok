@@ -7,7 +7,7 @@ let books = [
     {
       id: 0,
       author: "Jude Combs",
-      title: "Quality Design",
+      title: "Really Very Good Quality Design Which Works, Always",
       coverSrc: "https://www.adobe.com/express/create/cover/media_1a1c99c9bbc4c5bd26974a96b19b1cdaee9bc866c.jpeg?width=400&format=jpeg&optimize=medium",
       desc: "The quick brown fox",
       published_ddmmyy: [28, 4, 2017],
