@@ -5,9 +5,15 @@
     transition: border-color 200ms ease;
     margin: .3rem;
 
+    transition: box-shadow 200ms ease;
     .category{
         padding: 0 .5rem 0 .2rem;
+        cursor: default;
     }
+}
+
+.tick:hover{
+    box-shadow: 0 0 3rem -5px var(--clr-background-300);
 }
 
 /* #region Book component */

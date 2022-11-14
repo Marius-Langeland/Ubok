@@ -1,6 +1,16 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Icon from '../components/Icons'
 import Tick from '../components/Ticks'
+
+class Filters{
+  tags: string[];
+  search: string;
+  
+  constructor(){
+    this.tags = ['ds'];
+    this.search = "";
+  }
+}
 
 function Filtering(){
 
@@ -14,17 +24,17 @@ function Filtering(){
     }
   
     function Categories(){
+      let [filter, setFilter] = useState(new Filters());
+
+      useEffect(() => {
+        localStorage.setItem('filters', JSON.stringify(filter));
+      }, filter);
+
       return(
         <div className="category-input">
           <Icon type='filter_list'/>
           <div className="category-list">
-            <Tick text='Non-fiction'/>
-            <Tick text='Action'/>
-            <Tick text='History'/>
-            <Tick text='Drawing'/>
-            <Tick text='Autobiography'/>
-            <Tick text='Childhood'/>
-            <Tick text='School'/>
+            {filter.tags.map((tag: string) => <Tick text={tag}/>)}
           </div>
         </div>
       );

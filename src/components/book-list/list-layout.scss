@@ -5,24 +5,22 @@
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: auto auto 1fr;
-        grid-template-rows: auto min(calc(3vw + 80px), 110px) 1fr;
 
         grid-template-areas: 
         "image title title"
-        "image tools descr"
-        "image .     descr";
+        "image tools descr";
 
-        @media (max-width: 400px) {
-            grid-template-rows: auto auto;
+        &:hover {background-color: var(--clr-background-500);}
+
+        @media (max-width: 430px) {
+            grid-template-rows: 1fr auto;
             grid-template-areas:
             "image title"
             "image tools";
             
             .book-title-author{display: unset;}
             .book-description{display: none;}
-            .book-icons{
-                flex-direction: row;
-            }
+            .book-icons{flex-direction: row;}
         }
     }
     img{grid-area: image;}
@@ -30,10 +28,6 @@
     .book-title-author{grid-area: title}
     .book-description{grid-area: descr;}
     .book-icons{grid-area: tools;}
-
-    .book:hover{
-        background-color: var(--clr-background-500);
-    }
 
     .book-title-author{
         display: flex;
@@ -52,21 +46,26 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        transition: box-shadow 200ms ease;
-        border-radius: .5rem;
-        padding: .6rem;
-        margin: .4rem;
     }
-    .book-icons:hover{
-        box-shadow: 0 0 35px -10px var(--clr-background-300);
+    .book-icons *{
+        box-shadow: 0 0 35px -4px var(--clr-background-300);
+        padding: .5rem;
+        margin: .2rem;
+        border-radius: .75rem;
     }
 
     .book-description{
-        margin-top: 1rem;
-        max-width: calc(50% + 20rem);
+        padding: .5rem;
+        border-radius: .5rem;
+
+        max-width: 500px;
+        max-height: 200px;
         text-align: justify;
         text-justify: distribute;
+
+        overflow: hidden;
+
+        background: linear-gradient(0deg, var(--clr-background-700), transparent 4rem);
     }
 
     img{

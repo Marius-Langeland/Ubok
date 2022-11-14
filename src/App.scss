@@ -17,13 +17,16 @@ body{
 
 .top-bar{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     
     .logo{
-        height: calc(4vw + 30px);
+        height: calc(2vw + 70px);
         fill: var(--clr-background-300);
         transition: fill 200ms ease;
+        
+        margin: 5rem;
     }
     
     .config-buttons{
@@ -72,8 +75,6 @@ body{
     }
 }
 
-/* #region RESULTS */
-
 .layout-grid{
     display: grid;
     grid-gap: 1rem;
@@ -81,6 +82,10 @@ body{
     padding: 1em;
     background-color: var(--clr-background-700);
     border-radius: 1rem;
+
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 .layout-list{
@@ -91,11 +96,3 @@ body{
         margin-bottom: 1rem;
     }
 }
-
-@media (min-width: 500px) {
-    .results.layout-grid{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-/* #endregion */
