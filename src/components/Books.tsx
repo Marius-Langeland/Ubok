@@ -22,7 +22,9 @@ function Book(props: any){
           {
             props.book.desc != undefined
             ? <>
-                <span className="book-description">{props.book.desc}</span>
+                <span className="book-description">{props.book.desc}
+                  <div className="book-description-bg"></div>
+                </span>
               </>
             : <></>
           }

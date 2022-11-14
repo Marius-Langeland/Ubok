@@ -3,8 +3,7 @@
     --clr-background-700: rgb(218, 225, 240);
     --clr-background-500: rgb(255, 248, 246);
     --clr-background-300: rgb(169, 177, 218);
-    --clr-background-100: rgb(132, 155, 179);
-
+    --clr-background-100: rgb(99, 166, 182);
 
     --clr-transparent: rgba(251, 248, 242, 0.95);
     --clr-primary: #fff;
@@ -17,8 +16,8 @@
     --clr-background-900: rgb(35, 38, 77);
     --clr-background-700: rgb(35, 27, 45);
     --clr-background-500: rgb(57, 52, 83);
-    --clr-background-300: rgb(169, 143, 195);
-    --clr-background-100: rgb(71, 93, 117);
+    --clr-background-300: rgb(71, 93, 117);
+    --clr-background-100: rgb(169, 143, 195);
 
     --clr-transparent: rgba(19, 22, 26, 0.95);
     --clr-primary: #000;

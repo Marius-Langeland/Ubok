@@ -6,7 +6,7 @@ function Topbar(){
 
     function Logo(){
       return(
-        <a className='link-home' href='/'>
+        <a className='link-home' href=''>
           <SiteLogo className='logo'/>
         </a>
       );
@@ -38,6 +38,11 @@ function Topbar(){
     return(
         <section className="top-bar">
           <Logo/>
+          <div className="banner">
+            Bøker for ungdom. Blogg, bokbase og leselyst!
+            <br />
+            Ubok-arkivet inneholder 3287 bøker, 1037 forfattere og 818 bloggposter.
+          </div>
           <Configs/>
         </section>
     );

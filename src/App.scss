@@ -22,17 +22,29 @@ body{
     align-items: center;
     
     .logo{
-        height: calc(2vw + 70px);
-        fill: var(--clr-background-300);
+        height: calc(4vw + 80px);
+        fill: var(--clr-background-100);
         transition: fill 200ms ease;
         
-        margin: 5rem;
+        margin: 5rem 0 2rem;
+    }
+
+    .banner{
+        width: 100%;
+        background-color: var(--clr-background-500);
+        font-size: min(calc(1vw + 1rem), 2rem);
+        text-align: center;
+
+        border-radius: 1rem;
+        margin: 2rem;
+        padding: 2rem;
     }
     
     .config-buttons{
         display: flex;
         justify-content: space-between;
         width: 110px;
+        align-self: flex-end;
     }
 }
 

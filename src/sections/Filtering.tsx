@@ -1,16 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Icon from '../components/Icons'
 import Tick from '../components/Ticks'
-
-class Filters{
-  tags: string[];
-  search: string;
-  
-  constructor(){
-    this.tags = ['ds'];
-    this.search = "";
-  }
-}
+import Result from './Result';
 
 function Filtering(){
 
@@ -24,27 +15,32 @@ function Filtering(){
     }
   
     function Categories(){
-      let [filter, setFilter] = useState(new Filters());
+      let [tags, setTags] = useState(JSON.parse(localStorage.getItem('tags') ?? '[]'));
 
       useEffect(() => {
-        localStorage.setItem('filters', JSON.stringify(filter));
-      }, filter);
+        localStorage.setItem('tags', JSON.stringify(tags));
+      }, [tags]);
 
       return(
         <div className="category-input">
           <Icon type='filter_list'/>
           <div className="category-list">
-            {filter.tags.map((tag: string) => <Tick text={tag}/>)}
+            {tags.map((tag: string, i: number) => <Tick key={i} text={tag} onClose={() => setTags(tags.splice(tags.indexOf(tag), 1))}/>)}
           </div>
         </div>
       );
     }
   
     return(
-      <section className="filtering">
-        <Search/>
-        <Categories/>
-      </section>
+      <>
+        <section className="filtering">
+          <Search/>
+          <Categories/>
+        </section>
+        <section className="results">
+          <Result/>
+        </section>
+      </>
     );
   }
 

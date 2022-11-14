@@ -1,5 +1,4 @@
 import Filtering from './sections/Filtering';
-import Result from './sections/Result';
 import Topbar from './sections/Topbar';
 import './App.scss';
 
@@ -9,7 +8,6 @@ function App() {
     <>
       <Topbar />
       <Filtering />
-      <Result />
     </>
   );
 }

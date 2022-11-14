@@ -65,7 +65,19 @@
 
         overflow: hidden;
 
-        background: linear-gradient(0deg, var(--clr-background-700), transparent 4rem);
+        position: relative;
+        *{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(0deg, var(--clr-background-700), transparent 5rem);
+
+            transition: opacity 300ms ease;
+        }
+
+        &:hover *{opacity: 60%;}
     }
 
     img{
