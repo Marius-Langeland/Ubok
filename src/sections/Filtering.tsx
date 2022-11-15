@@ -25,7 +25,10 @@ function Filtering(){
         <div className="category-input">
           <Icon type='filter_list'/>
           <div className="category-list">
-            {tags.map((tag: string, i: number) => <Tick key={i} text={tag} onClose={() => setTags(tags.splice(tags.indexOf(tag), 1))}/>)}
+            {tags.map((tag: string, i: number) => <Tick key={i} text={tag} onClose={() => {
+                tags.splice(tags.indexOf(tag), 1);
+                setTags(tags);
+              }}/>)}
           </div>
         </div>
       );
