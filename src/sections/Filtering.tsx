@@ -5,29 +5,34 @@ import Result from './Result';
 
 function Filtering(){
 
-    function Search(){
+    let [tags, setTags] = useState(JSON.parse(localStorage.getItem('tags') ?? '[]'));
+    useEffect(() => {
+      localStorage.setItem('tags', JSON.stringify(tags));
+    }, [tags]);
+
+    function Search(props: any){
       return(
         <div className="search-input">
           <Icon type='search'/>
-          <input type="text" name='search-text' className='search-text' placeholder='Search title, author, topic...'/>
+          
+          <form action="" onSubmit={(e) => {
+              e.preventDefault();
+              props.setTags((prev: any) => prev);
+            }}>
+            <input type="text" name='search-text' className='search-text' placeholder='Search   title, author, topic...'/>
+          </form>
+
         </div>
       );
     }
   
-    function Categories(){
-      let [tags, setTags] = useState(JSON.parse(localStorage.getItem('tags') ?? '[]'));
-
-      useEffect(() => {
-        localStorage.setItem('tags', JSON.stringify(tags));
-      }, [tags]);
-
+    function Categories(props: any){
       return(
         <div className="category-input">
           <Icon type='filter_list'/>
           <div className="category-list">
-            {tags.map((tag: string, i: number) => <Tick key={i} text={tag} onClose={() => {
-                tags.splice(tags.indexOf(tag), 1);
-                setTags(tags);
+            {props.tags.map((tag: string, i: number) => <Tick key={i} text={tag} onClose={() => {
+                props.setTags((prev: string[]) => prev.splice(prev.indexOf(tag), 1));
               }}/>)}
           </div>
         </div>
@@ -37,8 +42,8 @@ function Filtering(){
     return(
       <>
         <section className="filtering">
-          <Search/>
-          <Categories/>
+          <Search setTags={setTags}/>
+          <Categories tags={tags} setTags={setTags}/>
         </section>
         <section className="results">
           <Result/>
