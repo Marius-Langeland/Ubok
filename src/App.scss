@@ -42,15 +42,23 @@ body{
     
     .config-buttons{
         display: flex;
+        flex-flow: column-reverse;
         justify-content: space-between;
-        width: 110px;
         align-self: flex-end;
+        position: absolute;
+        height: 6rem;
+        bottom: 0;
+        right: -2rem;
+        z-index: 200;
     }
 }
 
 .filtering{
     display: flex;
     flex-direction: column;
+    background-color: var(--clr-background-500);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
     
     /* ----SEARCH---- */
     
