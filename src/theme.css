@@ -13,7 +13,7 @@
 
     --max-width: 1500px;
 
-    --text-size-1: calc(.9vw + .8rem);
+    --text-size-1: min(2rem, calc(.9vw + .8rem));
     --text-size-2: calc(var(--text-size-1) + .1rem);
     --text-size-3: calc(var(--text-size-2) + .2vw + .1rem);
     --text-size-4: calc(var(--text-size-3) + .1rem);
