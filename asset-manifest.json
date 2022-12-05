@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Ubok/static/css/main.25e777b5.css",
-    "main.js": "/Ubok/static/js/main.020883f7.js",
+    "main.css": "/Ubok/static/css/main.cf9bbb82.css",
+    "main.js": "/Ubok/static/js/main.5bc5684a.js",
     "index.html": "/Ubok/index.html",
     "static/media/logo.svg": "/Ubok/static/media/logo.3f61a473746e6004b1572508ee340f6a.svg",
-    "main.25e777b5.css.map": "/Ubok/static/css/main.25e777b5.css.map",
-    "main.020883f7.js.map": "/Ubok/static/js/main.020883f7.js.map"
+    "main.cf9bbb82.css.map": "/Ubok/static/css/main.cf9bbb82.css.map",
+    "main.5bc5684a.js.map": "/Ubok/static/js/main.5bc5684a.js.map"
   },
   "entrypoints": [
-    "static/css/main.25e777b5.css",
-    "static/js/main.020883f7.js"
+    "static/css/main.cf9bbb82.css",
+    "static/js/main.5bc5684a.js"
   ]
 }
