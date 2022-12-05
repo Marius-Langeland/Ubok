@@ -1,25 +1,5 @@
-.tick{
-    display: flex;
-    align-items: center;
-    border-radius: 100em;
-    transition: border-color 200ms ease;
-    margin: .3rem;
-
-    transition: box-shadow 200ms ease;
-    .category{
-        padding: 0 .5rem 0 .2rem;
-        cursor: default;
-    }
-}
-
-.tick:hover{
-    box-shadow: 0 0 3rem -5px var(--clr-background-300);
-}
-
-/* #region Book component */
-
 .book:hover{
-    background-color: var(--clr-background-700);
+    background-color: var(--clr-background-300);
     box-shadow: 0 0 12px 1px var(--clr-background-300);
 }
 
@@ -57,5 +37,3 @@
     animation-direction:alternate;
     animation-name: favorite-fill;
 }
-
-/* #endregion */

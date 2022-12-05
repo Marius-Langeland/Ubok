@@ -1,0 +1,35 @@
+.menu{
+    background-color: var(--clr-transparent);
+    color: var(--clr-primary);
+
+    margin: 0 0 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    display: grid;
+    grid-gap: 1rem 0;
+    grid-template-columns: 1fr 40px;
+    grid-template-rows: repeat(3, 40px);
+
+    grid-template-areas: 
+    ".      profile-btn"
+    "tags   filter-icon"
+    "search search-icon";
+
+    input{
+        all: unset;
+        text-align: end;
+        padding: 0 1rem;
+    }
+    
+    font-size: var(--text-size-2);
+    .material-symbols-outlined{font-size: var(--text-size-2);}
+    .menu-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color:var(--clr-transparent);
+        border-radius: .5rem;
+    }
+}

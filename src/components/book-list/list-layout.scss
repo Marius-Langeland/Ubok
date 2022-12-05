@@ -37,7 +37,7 @@
         padding: 1em;
     }
     .book-title{
-        font-size: max(min(5.5vw, 2rem), 1.2rem);
+        font-size: var(--text-size-4);
     }
     .book-author{
         font-style: italic;
@@ -81,7 +81,6 @@
     }
 
     img{
-        z-index: 1;
         width: 28vw;
         max-width: 200px;
         border-radius: .5rem;

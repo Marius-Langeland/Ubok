@@ -1,13 +1,13 @@
-import Filtering from './sections/Filtering';
-import Topbar from './sections/Topbar';
+import Background from './sections/Background';
+import Result from './sections/Result';
 import './App.scss';
 
 function App() {
 
   return (
     <>
-      <Topbar />
-      <Filtering />
+      <Background />
+      <Result />
     </>
   );
 }

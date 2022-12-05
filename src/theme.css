@@ -5,11 +5,19 @@
     --clr-background-300: rgb(169, 177, 218);
     --clr-background-100: rgb(99, 166, 182);
 
-    --clr-transparent: rgba(251, 248, 242, 0.95);
+    --clr-transparent: rgba(33, 45, 80, 0.788);
     --clr-primary: #fff;
     --clr-accent: #000;
     
     --clr-text: rgb(0, 0, 0);
+
+    --max-width: 1500px;
+
+    --text-size-1: calc(.9vw + .8rem);
+    --text-size-2: calc(var(--text-size-1) + .1rem);
+    --text-size-3: calc(var(--text-size-2) + .2vw + .1rem);
+    --text-size-4: calc(var(--text-size-3) + .1rem);
+    --text-size-5: calc(var(--text-size-4) + .2vw + .1rem);
 }
 
 [data-theme='dark']{

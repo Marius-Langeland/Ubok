@@ -1,0 +1,56 @@
+.background{
+    background: linear-gradient(180deg, var(--clr-background-900), var(--clr-background-700) 20em);
+
+    z-index: -5;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & .background-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-height: 50vh;
+        max-width: var(--max-width);
+
+        & div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: var(--clr-background-900);
+            
+            box-shadow: -5px 8px 6px -2px var(--clr-background-300);
+            margin: 1rem -.8rem;
+            border-radius: 45%;
+            font-size: var(--text-size-2);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: var(--clr-background-100);
+
+            aspect-ratio: 1;
+            padding: 1rem;
+        }
+
+        & div:nth-of-type(2){
+            margin-bottom: -2em;
+        }
+    }
+
+    .logo{
+        fill: var(--clr-background-100);
+        width: calc(12vw + 13rem);
+
+        margin: 6vw;
+    }
+}
