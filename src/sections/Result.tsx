@@ -90,8 +90,10 @@ function Result(){
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    filters.query = query;
-    parse_api_nb_dot_no(setPage);
+    if(query != ""){
+      filters.query = query;
+      parse_api_nb_dot_no(setPage);
+    }
   }, [query]);
 
   let bookNodes = page.map((book, i) => <Book key={book.id} book={book} />);
