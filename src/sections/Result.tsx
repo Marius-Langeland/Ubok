@@ -3,8 +3,9 @@ import Book from '../components/Books'
 import './filtering.scss'
 import '../theme.css'
 import Icon from '../components/Icons';
+import { json } from 'stream/consumers';
 
-let books = [
+let defaultBooks = [
   {
     id: 0,
     author: "Jude Combs",
@@ -30,42 +31,76 @@ let books = [
 
 let filters = {
   sort: {by: '', ascending: true},
-  search: '',
+  query: 'Røyken_vgs',
   tags: [''],
+  page: 0,
+  size: 10,
 }
 
-function parse_api_nb_dot_no(){
-  
+function parse_api_nb_dot_no(setPage: any){
+  fetch(`https://api.nb.no/catalog/v1/search?mediaTypeOrder=b%C3%B8ker%2Caviser%2Cbilder&mediaTypeSize=3&q=${filters.query}&searchType=FULL_TEXT_SEARCH&digitalAccessibleOnly=true&fragments=2&fragSize=500&profile=wwwnbno&page=${filters.page}&size=0&sort=string`)
+  .then((response) => response.json())
+  .then((json) => {
+    let page: any = [{}];
+    for (let i = 0; i < json._embedded.mediaTypeResults.length; i++) {
+      const e0 = json._embedded.mediaTypeResults[i];
+      for (let j = 0; j < json._embedded.mediaTypeResults[i].result._embedded.items.length; j++) {
+        const book = json._embedded.mediaTypeResults[i].result._embedded.items[j];
+
+        let index = page.length - 1;
+        page[index].id = book.id;
+        page[index].title = book.metadata.title;
+        page[index].coverSrc = book._links.thumbnail_large??"";
+        page.push({});
+        if(index > 11)
+          break;
+      }
+      if(page.length>9)
+        break;
+    }
+
+    console.log(page);
+    setPage(page);
+  });
 }
 
-function Filtering(){
+function Filtering(props: any){
+
+  function handleSubmit(e: any){
+    props.setQuery(e.target[0].value);
+    e.preventDefault();
+  }
+
   return(
     <div className="menu">
       <span></span>
       <span className="user-profile menu-icon"></span>
       <div className="tags"></div>
       <div className='menu-icon'><Icon type="settings" /></div>
-      <input type="text" name="" id="" placeholder='Søk tittel, forfatter, kategori...'/>
+      <form action="" onSubmit={e => handleSubmit(e)}>
+        <input type="text" name="" id="" placeholder='Søk tittel, forfatter, kategori...' />
+      </form>
       <div className='menu-icon'><Icon type="search" /></div>
     </div>
   )
 }
   
 function Result(){
-  const [layout, setLayout] = useState(JSON.parse(localStorage.getItem('layout') ?? JSON.stringify("layout-list")));
-  const [inspectedBook, setInspectedBook] = useState(-1);
-  useEffect(() => {
-    localStorage.setItem('layout', JSON.stringify(layout));
-  }, [layout]);
-  
-  let bookNodes = books.map((book, i) => <Book inspect={() => setInspectedBook(i)} key={book.id} book={book} />);
+  const [page, setPage] = useState(defaultBooks);
+  const [query, setQuery] = useState("");
 
-  let isInspecting = () => (inspectedBook >= 0 && inspectedBook < books.length);
+  useEffect(() => {
+    filters.query = query;
+    parse_api_nb_dot_no(setPage);
+  }, [query]);
+
+  let bookNodes = page.map((book, i) => <Book key={book.id} book={book} />);
+
   return(
     <>
       <main>
-        <Filtering />
-        <div className={`results layout-list ${""/*layout*/}`}>{bookNodes}</div>
+        <Filtering setQuery={setQuery}/>
+        <div className={`results layout-list`}>{bookNodes}</div>
       </main>
     </>
   );
