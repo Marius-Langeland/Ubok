@@ -73,8 +73,6 @@ function Filtering(props: any){
 
   return(
     <div className="menu">
-      <span></span>
-      <span className="user-profile menu-icon"></span>
       <div className="tags"></div>
       <div className='menu-icon'><Icon type="settings" /></div>
       <form action="" onSubmit={e => handleSubmit(e)}>

@@ -16,19 +16,6 @@ body{
     }
 }
 
-.layout-grid{
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-    padding: 1em;
-    background-color: var(--clr-background-700);
-    border-radius: 1rem;
-
-    @media (min-width: 500px) {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
 .layout-list{
     display: flex;
     flex-direction: column;

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Icon from './Icons';
 import './component.scss'
 import './book-list/list-layout.scss'
-import './book-list/grid-layout.scss'
 
 function Book(props: any){
     const [favorite, setFavorite] = useState(props.book.fav);

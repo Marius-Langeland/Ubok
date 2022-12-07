@@ -8,11 +8,10 @@
 
     display: grid;
     grid-gap: 1rem 0;
-    grid-template-columns: 1fr 40px;
-    grid-template-rows: repeat(3, 40px);
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
 
     grid-template-areas: 
-    ".      profile-btn"
     "tags   filter-icon"
     "search search-icon";
 
@@ -24,7 +23,10 @@
     }
     
     font-size: var(--text-size-1);
-    .material-symbols-outlined{font-size: var(--text-size-2);}
+    .material-symbols-outlined{
+        font-size: 1.6rem;
+        padding: .3rem;
+    }
     .menu-icon{
         display: flex;
         justify-content: center;
