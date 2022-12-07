@@ -5,7 +5,20 @@ import '../theme.css'
 import Icon from '../components/Icons';
 import { json } from 'stream/consumers';
 
-let defaultBooks = [
+class BookClass{
+  id: number = 0;
+  title: string = "Title";
+  author: string = "Author";
+  coverSrc: string = "Cover";
+  desc: string = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate numquam eum ipsum quasi? Inventore, ab. Eos unde accusantium impedit nostrum amet repudiandae repellat officiis? Quidem modi iste sequi in veniam?
+  Rem amet, laboriosam eius eum consequatur maiores id iste vel quisquam quasi voluptatem officia qui sint! Dolores perspiciatis dignissimos magni reprehenderit eaque? Harum facilis temporibus alias voluptas reiciendis perspiciatis nostrum.
+  Nisi harum provident animi repellendus repudiandae laudantium assumenda laboriosam ab quaerat id quibusdam praesentium suscipit at, doloribus optio sequi! Repellendus ea id, quibusdam earum reiciendis optio ut! Voluptatem, ad quod.
+  Aperiam distinctio incidunt voluptatem, consequuntur deserunt ipsam dignissimos possimus quos, recusandae aspernatur illum! Laboriosam dolorem eligendi natus ut, voluptate blanditiis quidem in, aperiam ratione facilis iusto modi dolorum, officia nihil.`;
+  published_ddmmyy: number[] = [];
+  fav: boolean = false;
+}
+
+let defaultBooks: BookClass[] = [
   {
     id: 0,
     author: "Jude Combs",
@@ -37,6 +50,7 @@ let filters = {
   size: 10,
 }
 
+// 
 function parse_api_nb_dot_no(setPage: any){
   fetch(`https://api.nb.no/catalog/v1/search?mediaTypeOrder=b%C3%B8ker%2Caviser%2Cbilder&mediaTypeSize=3&q=${filters.query}&searchType=FULL_TEXT_SEARCH&digitalAccessibleOnly=true&fragments=2&fragSize=500&profile=wwwnbno&page=${filters.page}&size=0&sort=string`)
   .then((response) => response.json())
@@ -59,7 +73,6 @@ function parse_api_nb_dot_no(setPage: any){
         break;
     }
 
-    console.log(page);
     setPage(page);
   });
 }
