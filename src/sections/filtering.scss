@@ -36,3 +36,8 @@
         border-radius: .5rem;
     }
 }
+
+.layout-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

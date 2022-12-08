@@ -1,5 +1,4 @@
 import React from 'react';
-import './component.scss'
 
 function Icon(props : any){
     return (

@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import Icon from './Icons';
-import './component.scss'
-import './book-list/list-layout.scss'
+import './book.scss'
 
 function Book(props: any){
     const [favorite, setFavorite] = useState(props.book.fav);
 
+    return(
+      <span className="book">
+        <img className='book-cover' onClick={props.inspect} src={props.book.coverSrc} alt={`'${props.book.title}' by ${props.book.author}`} />
+        <div className="book-metadata">
+          <span className="book-title">{props.book.title}</span>
+          <span> by </span>
+          <span className="book-author">{props.book.author}</span>
+        </div>
+        <div className="book-actions">
+          <Icon type='favorite' />
+          <Icon type="delete"/>
+        </div>
+      </span>
+    );
+    
     return(
       <span className="book">
         <img onClick={props.inspect} src={props.book.coverSrc} alt={`${props.book.title} by ${props.book.author}`} />
@@ -29,6 +43,8 @@ function Book(props: any){
           }
       </span>
     );
+
+    
 }
 
 export default Book;
