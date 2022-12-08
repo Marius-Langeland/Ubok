@@ -15,11 +15,9 @@
 
     .background-content{
         display: flex;
-        justify-content: center;
         align-items: center;
 
-        width: 100%;
-        max-height: 50vh;
+        max-height: var(--page-vertical-offset);
         max-width: var(--max-width);
 
         div{

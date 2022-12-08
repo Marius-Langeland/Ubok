@@ -3,7 +3,7 @@ body{
     justify-content: center;
     min-height: 100vh;
 
-    margin-top: calc(26vw + 15rem);
+    margin-top: var(--page-vertical-offset);
 }
 
 #root{

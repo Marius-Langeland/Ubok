@@ -18,6 +18,8 @@
     --text-size-3: calc(var(--text-size-2) + .2vw + .1rem);
     --text-size-4: calc(var(--text-size-3) + .1rem);
     --text-size-5: calc(var(--text-size-4) + .2vw + .1rem);
+
+    --page-vertical-offset: calc(20vw + 16rem);
 }
 
 [data-theme='dark']{
