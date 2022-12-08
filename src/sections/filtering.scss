@@ -39,5 +39,8 @@
 
 .layout-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    grid-gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }

@@ -18,6 +18,17 @@ class BookClass{
   fav: boolean = false;
 }
 
+class Collection{
+  creator = {
+    name: "",
+    img: "",
+  };
+  books: string[] = [];
+}
+
+let defaultCollections : Collection[] = [
+
+];
 let defaultBooks: BookClass[] = [
   {
     id: 0,
@@ -50,7 +61,14 @@ let filters = {
   size: 10,
 }
 
-// 
+
+function parse_nbdotno_book(metadata: any){
+  let book = new BookClass();
+  book.id = metadata.id;
+  book.title = metadata.metadata.title;
+  book.coverSrc = metadata._links.thumbnail_large??"";
+  return book;
+} 
 function parse_api_nb_dot_no(setPage: any){
   fetch(`https://api.nb.no/catalog/v1/search?mediaTypeOrder=b%C3%B8ker%2Caviser%2Cbilder&mediaTypeSize=3&q=${filters.query}&searchType=FULL_TEXT_SEARCH&digitalAccessibleOnly=true&fragments=2&fragSize=500&profile=wwwnbno&page=${filters.page}&size=0&sort=string`)
   .then((response) => response.json())
@@ -59,14 +77,11 @@ function parse_api_nb_dot_no(setPage: any){
     for (let i = 0; i < json._embedded.mediaTypeResults.length; i++) {
       const e0 = json._embedded.mediaTypeResults[i];
       for (let j = 0; j < json._embedded.mediaTypeResults[i].result._embedded.items.length; j++) {
-        const book = json._embedded.mediaTypeResults[i].result._embedded.items[j];
+        const metadata = json._embedded.mediaTypeResults[i].result._embedded.items[j];
 
-        let index = page.length - 1;
-        page[index].id = book.id;
-        page[index].title = book.metadata.title;
-        page[index].coverSrc = book._links.thumbnail_large??"";
-        page.push({});
-        if(index > 11)
+        page.push(parse_nbdotno_book(metadata))
+
+        if(page.length>11)
           break;
       }
       if(page.length>9)
@@ -97,6 +112,7 @@ function Filtering(props: any){
 }
   
 function Result(){
+  const [collections, setCollections] = useState(defaultCollections)
   const [page, setPage] = useState(defaultBooks);
   const [query, setQuery] = useState("");
 
@@ -107,15 +123,27 @@ function Result(){
     }
   }, [query]);
 
-  let bookNodes = page.map((book, i) => <Book key={book.id} book={book} />);
-
+  while(page.length < 6)
+    page.push(new BookClass());
+  let bookNodes = page.map((book, i) => <Book key={book.id} book={book} visible={book.title!="Title" && book.author!="Author"} />);
   return(
-    <>
-      <main>
-        <Filtering setQuery={setQuery}/>
+    <main>
+
+      <Filtering setQuery={setQuery}/>
+
+      <section className='collections'>
+        {collections.map((item, i) => 
+          <div className="collection-group">
+            
+          </div>
+        )}
+      </section>
+
+      <section className="query-results">
         <div className={`results layout-list`}>{bookNodes}</div>
-      </main>
-    </>
+      </section>
+
+    </main>
   );
 }
 
