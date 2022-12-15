@@ -20,15 +20,26 @@ class BookClass{
 
 class Collection{
   creator = {
-    name: "",
+    name: "Jonas John Jonasson jr.",
     img: "",
   };
   books: string[] = [];
+  description: string = "Description";
+  title: string = "Title";
 }
 
 let defaultCollections : Collection[] = [
-
+  {
+    creator: {
+      name: "Marius Langeland",
+      img: ""
+    },
+    description: "",
+    title: "",
+    books: ["9788242956309"]
+  }
 ];
+
 let defaultBooks: BookClass[] = [
   {
     id: 0,
@@ -61,7 +72,6 @@ let filters = {
   size: 10,
 }
 
-
 function parse_nbdotno_book(metadata: any){
   let book = new BookClass();
   book.id = metadata.id;
@@ -91,6 +101,14 @@ function parse_api_nb_dot_no(setPage: any){
     setPage(page);
   });
 }
+function searchBook(id: string){
+  fetch(`https://api.nb.no/catalog/v1/items?q=${id}&searchType=FULL_TEXT_SEARCH&fragments=2&fragSize=500&profile=wwwnbno&page=0&size=10`)
+  .then((response) => response.json())
+  .then((json) => {
+    const data = parse_nbdotno_book(json._embedded.mediaTypeResults[0].result._embedded.items[0]);
+    return <Book book={data}/>
+  });
+}
 
 function Filtering(props: any){
 
@@ -110,6 +128,28 @@ function Filtering(props: any){
     </div>
   )
 }
+
+function Collections(props: any){
+  return(
+    <section className='collections'>
+      {
+        props.collection.map((item: Collection) => 
+          <div className="collection-instance">
+            {item.books.map((bookID: string) => 
+              <>
+                {searchBook(bookID)};
+              </>
+            )}
+
+            <img src={item.creator.img} alt="" />
+            <span className="collection-creator">{item.creator.name}</span>
+            <span className="collection-description">{item.description}</span>
+          </div>
+        )
+      }
+    </section>
+  );
+}
   
 function Result(){
   const [collections, setCollections] = useState(defaultCollections)
@@ -125,19 +165,13 @@ function Result(){
 
   while(page.length < 6)
     page.push(new BookClass());
+  
   let bookNodes = page.map((book, i) => <Book key={book.id} book={book} visible={book.title!="Title" && book.author!="Author"} />);
+  
   return(
     <main>
-
       <Filtering setQuery={setQuery}/>
-
-      <section className='collections'>
-        {collections.map((item, i) => 
-          <div className="collection-group">
-            
-          </div>
-        )}
-      </section>
+      <Collections collection={collections}/>
 
       <section className="query-results">
         <div className={`results layout-list`}>{bookNodes}</div>
