@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Collections(){
+function Collections(props: any){
     return(
-        <>
-        
-        </>
+        <section className="collections">
+            
+        </section>
     );
 }
 
