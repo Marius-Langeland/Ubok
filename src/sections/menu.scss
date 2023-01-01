@@ -23,7 +23,7 @@
     & *:not(.background){
         z-index: 1;
     }
-    
+
     .menu-button{
         align-self: center;
         font-size: 2rem;
@@ -73,7 +73,7 @@
     }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 500px) {
     .menu-section{
         border-radius: 3rem 3rem 0 0;
     }
