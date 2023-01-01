@@ -6,7 +6,6 @@
     position: relative;
     padding: 1.5rem;
     overflow: hidden;
-    color: #f1906d;
 
     background-image: url(https://cdn.discordapp.com/attachments/1058068137783865465/1059130178493747251/Geezmo_Illustration_of_vegetation_growing_out_of_books_lying_do_ed0f41a0-ca1d-410d-9866-f0c9043bcaa2.png);
     background-position: 50% 30%;
@@ -31,13 +30,12 @@
         padding: 8px;
         border-radius: 50%;
         aspect-ratio: 1;
-        background: linear-gradient(-45deg, #8f4d35, #f1906d) ;
-        color: var(--clr-bgr-200);
         cursor: pointer;
+        background-color: var(--clr-bgr-200);
 
         span{
-            transform: scaleX(120%);
-            font-size: 1rem;
+            transform: scaleX(130%);
+            font-size: 1.2rem;
         }
 
         transition: transform .2s ease;
@@ -51,6 +49,10 @@
         letter-spacing: 3px;
         font-family:'Times New Roman', Times, serif;
         grid-row: 1;
+        .description{
+            font-size: 1.2rem;
+            opacity: 60%;
+        }
     }
 }
 
