@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <Menu />
+      <span className='gap'></span>
       <Collections />
     </>
   );

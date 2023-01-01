@@ -4,7 +4,7 @@ import './menu.scss';
 
 function Menu(){
     return (
-        <section className='menu-section'>
+        <section className='menu-section shadow'>
             <Icon type="menu" className="menu-button"/>
             <div className='settings'>
                 <Icon type='lightbulb'/>

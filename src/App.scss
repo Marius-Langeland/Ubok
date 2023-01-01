@@ -4,16 +4,30 @@ body{
     min-height: 100vh;
 
     color: white;
+    background-color: var(--clr-bgr-300);
 }
 
 #root{
     width: 100%;
     flex-grow: 1;
     max-width: 1500px;
-    background-color: var(--clr-bgr-100);
-    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .shadow{
-    box-shadow: .3rem .7rem 2rem 4px rgba(0, 0, 0, 0.567);
+    box-shadow: .3rem .7rem 4rem 4px rgba(0, 0, 0, 0.4);
+}
+
+.gap{
+    height: 5px;
+    background-color: rgb(235, 217, 165);
+}
+
+@media (min-width: 400px) {
+    #root{
+        margin: 1rem;
+        border-radius: 3rem;
+    }
 }
