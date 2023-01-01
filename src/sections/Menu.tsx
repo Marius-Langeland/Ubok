@@ -11,20 +11,17 @@ function Menu(){
                 <Icon type='lightbulb'/>
                 <Icon type='empty_dashboard'/>
                 <Icon type='public'/>
-                <Icon type='info'/>
             </div>
             <span className="logo">Ubok</span>
-            <span className="profile shadow">Profile</span>
+            <span className="profile shadow">
+                <span></span>
+            </span>
             <div className="description">
                 <span>2543</span>
                 <span>42</span>
                 <span>672</span>
                 <span>15</span>
                 <span>781</span>
-            </div>
-            <div className="buttons">
-                <span className='shadow'></span>
-                <span className='shadow'></span>
             </div>
         </section>
     );

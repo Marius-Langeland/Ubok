@@ -1,6 +1,19 @@
 .collection-section{
     flex-grow: 1;
     background-color: var(--clr-bgr-100);
+    padding: 10%;
+    grid-column-gap: 10%;
+    grid-row-gap: 3rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .collection-facade{
+        img{
+            width: 100%;
+            border-radius: 1rem;
+        }
+    }
 
     @media (min-width: 500px) {
         border-radius: 0 0 3rem 3rem;
