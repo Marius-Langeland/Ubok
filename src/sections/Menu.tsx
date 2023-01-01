@@ -7,8 +7,8 @@ function Menu(){
         <section className='menu-section shadow'>
             <span className="background"></span>
             <span className="logo">
-                Ubok <br />
-                <span className="description">Curated library of recommendations</span>
+                <span>Ubok</span>
+                <span className="description">Curated library of book recommendations</span>
             </span>
             <span className="menu-button shadow">
                 <Icon type="menu"/>
