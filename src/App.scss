@@ -4,7 +4,7 @@ body{
     min-height: 100vh;
 
     color: white;
-    background-color: var(--clr-bgr-300);
+    background: linear-gradient(var(--clr-bgr-300), rgb(29, 43, 47), rgb(15, 20, 21));
 }
 
 #root{
@@ -22,7 +22,8 @@ body{
 
 .gap{
     height: 5px;
-    background-color: rgb(235, 217, 165);
+    background-color: #b16043;
+    filter: brightness(120%);
 }
 
 @media (min-width: 400px) {

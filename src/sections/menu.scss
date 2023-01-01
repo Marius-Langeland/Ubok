@@ -1,12 +1,29 @@
 .menu-section{
+    position: relative;
     display: grid;
     padding: 1.5rem;
     grid-row-gap: 16px;
     grid-template-columns: auto 80px;
     grid-template-rows: 3rem auto 1.5rem;
-    background: linear-gradient(rgba(118, 164, 148, 0.535), var(--clr-bgr-300));
+    overflow: hidden;
+    background-image: url(https://cdn.discordapp.com/attachments/1058068137783865465/1059130178493747251/Geezmo_Illustration_of_vegetation_growing_out_of_books_lying_do_ed0f41a0-ca1d-410d-9866-f0c9043bcaa2.png);
+        background-position: 50% 30%;
+        background-size: 101%;
 
+    aspect-ratio: 3/2;
 
+    .background{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.876))
+    }
+    & *:not(.background){
+        z-index: 1;
+    }
+    
     .menu-button{
         align-self: center;
         font-size: 2rem;
@@ -30,6 +47,7 @@
     }
 
     .profile{
+        align-self: flex-end;
         padding: 1rem;
         text-align: center;
         border-radius: var(--var-border-radius);
