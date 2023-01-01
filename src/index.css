@@ -13,12 +13,11 @@ code {
     monospace;
 }
 
-.material-symbols-outlined:not(.search-icon){cursor: pointer;}
 .material-symbols-outlined {
   user-select: none;
   font-variation-settings:
   'FILL' 0,
-  'wght' 200,
+  'wght' 700,
   'GRAD' 0,
   'opsz' 48;
 }

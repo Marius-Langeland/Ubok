@@ -1,10 +1,13 @@
 .menu-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
     position: relative;
-    display: grid;
     padding: 1.5rem;
-    grid-template-columns: auto 75px;
-    grid-template-rows: auto 1fr auto auto;
     overflow: hidden;
+    color: #f1906d;
+
     background-image: url(https://cdn.discordapp.com/attachments/1058068137783865465/1059130178493747251/Geezmo_Illustration_of_vegetation_growing_out_of_books_lying_do_ed0f41a0-ca1d-410d-9866-f0c9043bcaa2.png);
     background-position: 50% 30%;
     background-size: 102%;
@@ -24,52 +27,24 @@
     }
 
     .menu-button{
-        align-self: center;
-        font-size: 2rem;
-        transform: scaleX(120%);
-        justify-self: start;        
-    }
-
-    .settings{
-        align-self: center;
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        *{font-size: 1.2rem;}
-    }
-
-    .description{
-        display: flex;
-        align-self: flex-end;
-        gap: 1rem;
-        opacity: 50%;
-        grid-row: 4;
-    }
-
-    .profile{
+        padding: 8px;
         border-radius: 50%;
-        background: linear-gradient(-45deg, var(--clr-bgr-300), var(--clr-bgr-400));
-        grid-row: 3 / 5;
         aspect-ratio: 1;
+        background: linear-gradient(-45deg, #8f4d35, #f1906d) ;
+        color: var(--clr-bgr-200);
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        * {
-            border-radius: 50%;
-            background-color: var(--clr-bgr-100);
-            width: 90%;
-            aspect-ratio: 1;
+        span{
+            transform: scaleX(120%);
+            font-size: 1rem;
         }
     }
 
     .logo{
         font-size: 2rem;
-        align-self: flex-end;
         letter-spacing: 3px;
         font-family:'Times New Roman', Times, serif;
-        grid-row: 3;
+        grid-row: 1;
     }
 }
 
