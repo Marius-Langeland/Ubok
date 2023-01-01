@@ -1,13 +1,13 @@
-import Background from './sections/Background';
-import Result from './sections/Result';
+import Menu from './sections/Menu';
+import Collections from './sections/Collections';
 import './App.scss';
 
 function App() {
 
   return (
     <>
-      <Background />
-      <Result />
+      <Menu />
+      <Collections />
     </>
   );
 }

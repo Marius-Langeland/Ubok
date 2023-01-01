@@ -3,16 +3,17 @@ body{
     justify-content: center;
     min-height: 100vh;
 
-    margin-top: var(--page-vertical-offset);
+    color: white;
 }
 
 #root{
     width: 100%;
+    flex-grow: 1;
     max-width: 1500px;
-    padding: 1rem;
-
-    section>*{
-        margin-bottom: 1rem;
-    }
+    background-color: var(--clr-bgr-100);
+    padding: 1.5rem;
 }
 
+.shadow{
+    box-shadow: .3rem .7rem 2rem 4px rgba(0, 0, 0, 0.567);
+}

@@ -3,7 +3,7 @@ import React from 'react';
 function Icon(props : any){
     return (
         <span onClick={props.onClick} 
-              className={`material-symbols-outlined ${props.type}-icon${props.toggle ? " enabled" : ""} `}>
+              className={`material-symbols-outlined ${props.className}`}>
           {props.type}
         </span>
     );

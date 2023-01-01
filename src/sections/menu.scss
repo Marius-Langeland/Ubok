@@ -1,0 +1,49 @@
+.menu-section{
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: auto 100px;
+    grid-template-rows: 3rem auto 1.5rem;
+
+    .menu-button{
+        font-size: 1.5rem;
+        transform: scaleX(120%);
+        justify-self: start;        
+    }
+
+    .settings{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .description{
+        display: flex;
+        gap: 1rem;
+        opacity: 50%;
+    }
+
+    .profile{
+        padding: 1rem;
+        text-align: center;
+        border-radius: var(--var-border-radius);
+        background: linear-gradient(-45deg, var(--clr-bgr-300), var(--clr-bgr-400))
+    }
+
+    .logo{
+        font-size: 2.75rem;
+        align-self: flex-end;
+        letter-spacing: 3px;
+        font-family:'Times New Roman', Times, serif;
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+    .buttons *{
+        aspect-ratio: 1;
+        border-radius: var(--var-border-radius);
+        background: linear-gradient(-45deg, var(--clr-bgr-300), var(--clr-bgr-400))
+    }
+}
+
