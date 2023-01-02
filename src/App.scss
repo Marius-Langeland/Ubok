@@ -22,8 +22,10 @@ body{
 
 .gap{
     height: 5px;
-    background-color: #b16043;
+    background: linear-gradient(-90deg, var(--clr-acc-100), var(--clr-acc-200), var(--clr-acc-100));
     filter: brightness(120%);
+    margin: 5px;
+    border-radius: 2rem;
 }
 
 @media (min-width: 800px) {
@@ -32,10 +34,10 @@ body{
         border-radius: 3rem;
     }
 
-    .collection-section{border-radius: 0 0 1rem 1rem;}
+    .collection-section{border-radius: .5rem .5rem 1rem 1rem;}
 
     .menu-section{
-        border-radius: 1rem 1rem 0 0;
+        border-radius: 1rem 1rem .5rem .5rem;
         .logo .description {font-size: 1.1rem !important;}
     }
 }
