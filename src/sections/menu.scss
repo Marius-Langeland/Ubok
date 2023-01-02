@@ -69,9 +69,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        margin: 8px;
+        margin: 4px;
         //backdrop-filter: blur(10px);
-        border-radius: calc(1rem - 8px);
+        border-radius: calc(1rem - 3px) calc(1rem - 3px) 5px 5px;
 
         background-image: url('https://cdn.discordapp.com/attachments/1058068137783865465/1059420079361634324/Geezmo_Autumn_orange_color_backdrop._Empty_center._Leaves_in_th_9507c91f-721d-4067-adf6-d9d78023d3d9.png');
         background-size: 102%;

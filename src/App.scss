@@ -40,14 +40,17 @@ body{
     height: 5px;
     background: linear-gradient(-90deg, var(--clr-acc-100), var(--clr-acc-200), var(--clr-acc-100));
     filter: brightness(120%);
-    margin: 5px;
-    border-radius: 2rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
     #root{
         margin: 1rem;
         border-radius: 3rem;
+    }
+
+    .gap{
+        margin: 5px;
+        border-radius: 2rem;
     }
 
     .collection-section{border-radius: .5rem .5rem 1rem 1rem;}
