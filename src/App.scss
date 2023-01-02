@@ -26,9 +26,16 @@ body{
     filter: brightness(120%);
 }
 
-@media (min-width: 500px) {
+@media (min-width: 800px) {
     #root{
         margin: 1rem;
         border-radius: 3rem;
+    }
+
+    .collection-section{border-radius: 0 0 1rem 1rem;}
+
+    .menu-section{
+        border-radius: 1rem 1rem 0 0;
+        .logo .description {font-size: 1.1rem !important;}
     }
 }
