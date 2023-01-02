@@ -1,5 +1,5 @@
 import Background from './sections/Background';
-import Result from './sections/Result';
+import Collections from './sections/Collections';
 import './App.scss';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Background />
-      <Result />
+      <Collections />
     </>
   );
 }

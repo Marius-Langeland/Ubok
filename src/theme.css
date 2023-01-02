@@ -5,6 +5,10 @@
     --clr-background-300: rgb(169, 177, 218);
     --clr-background-100: rgb(99, 166, 182);
 
+    --clr-contrast-100: rgb(48, 54, 58);
+    --clr-contrast-300: rgb(36, 47, 63);
+    --clr-contrast-500: rgb(16, 22, 56);
+
     --clr-transparent: rgba(33, 45, 80, 0.788);
     --clr-primary: #fff;
     --clr-accent: #000;

@@ -1,0 +1,30 @@
+.collection-groups{
+    display: flex;
+    flex-direction: column;
+
+    gap: 7rem;
+}
+
+.collection{
+    min-height: 300px;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.collection>*{
+    border: 2px solid var(--clr-background-300);
+}
+
+.curator-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.collection-profile{
+    width: 130px;
+    height: 130px;
+    background-color: var(--clr-background-300);
+    border-radius: 50%;
+}
