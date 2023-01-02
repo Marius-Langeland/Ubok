@@ -5,6 +5,22 @@ body{
 
     color: white;
     background: linear-gradient(var(--clr-bgr-300), rgb(29, 43, 47), rgb(15, 20, 21) 100vh);
+    transition: box-shadow 1s ease;
+    .glow{
+        position: absolute;
+        top: 1rem;
+        width: calc(100% - 2rem);
+        max-width: 1000px;
+        aspect-ratio: 3/2;
+        z-index: -1;
+        border-radius: 1rem;
+        filter: brightness(150%);
+
+        transition: box-shadow 1s ease;
+    }
+    &.menu-opened .glow{
+        box-shadow: 0 0 14rem 1rem var(--clr-acc-100);
+    }
 }
 
 #root{
