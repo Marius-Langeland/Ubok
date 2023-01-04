@@ -24,8 +24,9 @@ function CollectionFacade(props: any){
                 <div className="right">
                     <div className="facade-open" tabIndex={tabIndex}>Åpne</div>
                 </div>
-                <div className="left">
-                    <Icon type='visibility_off' className='facade-hide'/>
+                
+                <div className="facade-hide">
+                    <Icon type='visibility_off'/>
                 </div>
             </div>
         </div>

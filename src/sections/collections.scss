@@ -8,18 +8,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    font-size: x-small;
-
-    @media (min-width: 400px) {
-        grid-template-columns: 1fr 1fr;
-        font-size: small;
-    }
-    @media (min-width: 600px) {
-        grid-template-columns: 1fr 1fr;
-        font-size: medium;
-
-        .facade-open{padding: .6rem 1rem !important;}
-    }
     @media (min-width: 800px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -55,7 +43,15 @@
             &:focus{
                 opacity: 0;
                 .facade-description{opacity: 0; transition: none}
-                .facade-image-top {transform: translate(0, -100%);}
+                .facade-image-top{transform: translate(0, -100%);}
+                
+                
+            }
+
+            &:focus+div{
+                .facade-open, .facade-hide{
+                    background-color: var(--clr-bgr-100);
+                }
             }
         }
 
@@ -97,24 +93,41 @@
             width: 100%;
             bottom: 0;
             padding: .5rem;
+            height: 3.5rem;
+
+            *{height: 100%;}
+
+            .right{
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .facade-hide, .facade-open{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
             .facade-open{
                 background-color: var(--clr-bgr-200);
-                padding: .4rem .6rem;
+                aspect-ratio: 3/2;
                 border-radius: 22rem;
                 
                 user-select: none;
                 cursor: pointer;
                 box-shadow: 0 0 2rem 0 black;
-                transition: filter .2s ease;
+                transition: filter .2s ease, background-color .3s ease;
                 &:hover{filter: brightness(130%);}
             }
-
+            
             .facade-hide{
-                padding: .6rem;
                 aspect-ratio: 1;
-                border-radius: 10rem;
+                transition: background-color .3s ease;
                 background-color: var(--clr-bgr-200);
+                border-radius: 100px;
+                span{height: auto;}
+                box-shadow: 0 0 2rem 0 black;
             }
         }
     }
