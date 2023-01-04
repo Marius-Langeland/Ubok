@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Ubok/static/css/main.18a70711.css",
-    "main.js": "/Ubok/static/js/main.a64552ce.js",
+    "main.css": "/Ubok/static/css/main.303eeb9f.css",
+    "main.js": "/Ubok/static/js/main.184faf15.js",
     "index.html": "/Ubok/index.html",
-    "main.18a70711.css.map": "/Ubok/static/css/main.18a70711.css.map",
-    "main.a64552ce.js.map": "/Ubok/static/js/main.a64552ce.js.map"
+    "main.303eeb9f.css.map": "/Ubok/static/css/main.303eeb9f.css.map",
+    "main.184faf15.js.map": "/Ubok/static/js/main.184faf15.js.map"
   },
   "entrypoints": [
-    "static/css/main.18a70711.css",
-    "static/js/main.a64552ce.js"
+    "static/css/main.303eeb9f.css",
+    "static/js/main.184faf15.js"
   ]
 }
