@@ -75,18 +75,31 @@
             justify-content: space-between;
             align-items: flex-end;
             padding: 5%;
+        }
+        
+        .facade-buttons{
+            display: flex;
+            flex-direction: row-reverse;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: .5rem;
 
             .facade-open{
                 background-color: var(--clr-bgr-200);
                 padding: .4rem .6rem;
                 border-radius: 22rem;
-
+                
                 user-select: none;
                 cursor: pointer;
                 box-shadow: 0 0 2rem 0 black;
                 transition: filter .2s ease;
                 &:hover{filter: brightness(130%);}
             }
+        }
+        
+        &.hide{
+            
         }
     }
 }

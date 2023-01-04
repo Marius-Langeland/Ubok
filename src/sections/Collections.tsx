@@ -1,9 +1,11 @@
 import './collections.scss';
-import React from 'react';
+import React, {useState} from 'react';
 
 function CollectionFacade(props: any){
+    let [hide, setHide] = useState(false);
+
     return(
-        <div className='collection-facade shadow'>
+        <div className={`collection-facade shadow ${hide ? 'hide' : ''}`}>
             <img src={props.url} alt="" />
             <div className="facade-image-mask">
                 <div className='facade-image-top'>
@@ -12,9 +14,12 @@ function CollectionFacade(props: any){
                 </div>
                 
                 <div className="facade-description">
-                    <span>{props.description} <br /> <br /> {props.date}</span>
-                    <div className="facade-open">Åpne</div>
+                    <span>{props.description}</span>
                 </div>
+            </div>
+
+            <div className="facade-buttons">
+                <div className="facade-open">Åpne</div>
             </div>
         </div>
     );

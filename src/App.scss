@@ -4,15 +4,24 @@ body{
     min-height: 100vh;
 
     color: white;
-    background: linear-gradient(var(--clr-bgr-300), rgb(29, 43, 47), rgb(15, 20, 21) 100vh);
     
     .menu-section{transition: box-shadow 1s ease;}
     &.menu-opened .menu-section{
         box-shadow: 0 0 12rem 1rem var(--clr-acc-100);
     }
+    &>.background{
+        display: none;
+        position:fixed;
+        height: 200vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(var(--clr-bgr-300), var(--clr-bgr-200), var(--clr-bgr-100) 110vh);
+    }
 }
 
 #root{
+    position: relative;
     width: 100%;
     flex-grow: 1;
     max-width: 1000px;
@@ -33,7 +42,7 @@ body{
 
 @media (min-width: 600px) {
     #root{
-        margin: 1rem;
+        margin: 20vh 1rem;
         border-radius: 3rem;
     }
 
@@ -42,10 +51,14 @@ body{
         border-radius: 2rem;
     }
 
-    .collection-section{border-radius: .5rem .5rem 1rem 1rem;}
+    .collection-section{
+        border-radius: .5rem .5rem 3rem 3rem;
+    }
 
     .menu-section{
         border-radius: 1rem 1rem .5rem .5rem;
         .logo .description {font-size: 1.1rem !important;}
     }
+
+    body>.background{display: block;}
 }
