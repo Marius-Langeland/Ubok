@@ -1,12 +1,14 @@
-import './collections.scss';
+import Icon from '../components/Icons';
 import React, {useState} from 'react';
+import './collections.scss';
 
 function CollectionFacade(props: any){
     let [hide, setHide] = useState(false);
+    let width = props.width ?? 1;
 
     return(
-        <div className={`collection-facade shadow ${hide ? 'hide' : ''}`}>
-            <img src={props.url} alt="" />
+        <div className={`collection-facade shadow ${hide ? 'hide' : ''}`} style={{gridColumn: `span ${width}`}}>
+            <img src={props.url} alt="" style={{aspectRatio: width == 1 ? '2/3' : '3/2'}}/>
             <div className="facade-image-mask">
                 <div className='facade-image-top'>
                     <span className="facade-editor"></span>
@@ -19,7 +21,12 @@ function CollectionFacade(props: any){
             </div>
 
             <div className="facade-buttons">
-                <div className="facade-open">Åpne</div>
+                <div className="right">
+                    <div className="facade-open">Åpne</div>
+                </div>
+                <div className="left">
+                    <Icon type='visibility_off' className='facade-hide'/>
+                </div>
             </div>
         </div>
     );
@@ -28,6 +35,7 @@ function CollectionFacade(props: any){
 function Collections(props: any){
     return(
         <section className="collection-section shadow">
+            <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1060121790258622474/Geezmo_Mandelbulb_hovering_over_the_open_ocean_12c978b4-4a5a-4ea5-8e91-f0123cf66c00.png' description='Test collection' title='Test title' date="27 Mai, 2020" width={2}/>
             <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1059599395055751178/Geezmo_Large_and_glowing_runic_sphere_lying_on_a_spiraling_trod_b3ca8c60-48b9-4b53-9a5e-310dfe06f5c3.png' description='Test collection' title='Test title' date="27 Mai, 2020"/>
             <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1059590610434134046/Geezmo_abstract_illustration_fb20c988-0999-4e4f-b881-3d0913ceb89a.png' description='Test collection' title='Test title' date="27 Mai, 2020"/>
             <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1059592445169500190/Geezmo_Poster_of_wizard_and_robot_in_the_style_of_Wes_Anderson._3bab3a6b-f758-4153-ba51-056fd3b50dac.png' description='Test collection' title='Test title' date="27 Mai, 2020"/>
