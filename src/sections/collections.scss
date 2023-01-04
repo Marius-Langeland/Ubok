@@ -31,7 +31,6 @@
 
         img{
             width: 100%; 
-            aspect-ratio: 2/3;
             object-fit: cover;
         }
 
@@ -47,6 +46,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: opacity .4s ease;
+
+            .facade-description, .facade-image-top{
+                transition: transform .5s ease;
+            }
+            &:focus{
+                opacity: 0;
+                .facade-description{transform: translate(0, 100%);}
+                .facade-image-top {transform: translate(0, -100%);}
+            }
         }
 
         .facade-image-top{

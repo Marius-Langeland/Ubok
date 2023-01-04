@@ -9,14 +9,15 @@ body{
     &.menu-opened .menu-section{
         box-shadow: 0 0 12rem 1rem var(--clr-acc-100);
     }
+
+    background: linear-gradient(var(--clr-bgr-300), var(--clr-bgr-200), rgb(30, 35, 45) 110vh);
     &>.background{
         display: none;
-        position:fixed;
-        height: 200vh;
+        position:absolute;
         top: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(var(--clr-bgr-300), var(--clr-bgr-200), rgb(93, 110, 125) 110vh);
+        bottom: 0;
     }
 }
 
@@ -60,5 +61,8 @@ body{
         .logo .description {font-size: 1.1rem !important;}
     }
 
-    body>.background{display: block;}
+    body>.background{
+        display: block;
+    }
 }
+    
