@@ -36,6 +36,9 @@ function CollectionFacade(props: any){
 function Collections(props: any){
     return(
         <section className="collection-section shadow">
+            <div className='collection-header'>
+                <h1>Collections</h1>
+            </div>
             <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1060121790258622474/Geezmo_Mandelbulb_hovering_over_the_open_ocean_12c978b4-4a5a-4ea5-8e91-f0123cf66c00.png' description='Test collection' title='Test title' date="27 Mai, 2020" width={2}/>
             <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1059599395055751178/Geezmo_Large_and_glowing_runic_sphere_lying_on_a_spiraling_trod_b3ca8c60-48b9-4b53-9a5e-310dfe06f5c3.png' description='Test collection' title='Test title' date="27 Mai, 2020"/>
             <CollectionFacade url='https://cdn.discordapp.com/attachments/1058068137783865465/1059590610434134046/Geezmo_abstract_illustration_fb20c988-0999-4e4f-b881-3d0913ceb89a.png' description='Test collection' title='Test title' date="27 Mai, 2020"/>
