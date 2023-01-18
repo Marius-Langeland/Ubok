@@ -68,12 +68,14 @@
             gap: .5rem;
 
             .facade-editor{
-                backdrop-filter: blur(5px);
-                background-color: rgba(24, 28, 28, 0.605);
+                background-image: url(../profile.jpg);
+                background-position: center;
+                background-size: 180%;
                 border: 2px solid rgb(155, 194, 196);
                 width: 30px;
                 border-radius: 50%;
                 aspect-ratio: 1;
+                cursor: pointer;
             }
         }
 

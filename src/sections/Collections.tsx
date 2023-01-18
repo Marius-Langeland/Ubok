@@ -11,7 +11,7 @@ function CollectionFacade(props: any){
             <img src={props.url} alt="" style={{aspectRatio: width == 1 ? '2/3' : '3/2'}}/>
             <div className="facade-image-mask" tabIndex={tabIndex - 1}>
                 <div className='facade-image-top'>
-                    <span className="facade-editor"></span>
+                    <span tabIndex={-1} className="facade-editor" onClick={function(){}}/>
                     <span className="facade-title">{props.title}</span>
                 </div>
                 
