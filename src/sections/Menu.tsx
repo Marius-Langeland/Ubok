@@ -14,18 +14,10 @@ function Menu(props: any){
             <span className="background"></span>
             <span className="logo">
                 <span className='logo-title'>Ubok</span>
-                <span className="description">Curated library of book recommendations</span>
+                <span className="description">En kuratert samling av bokanbefalinger</span>
             </span>
-            <span className={`menu-button shadow ${toggleSettings ? 'enabled' : ''}`} onClick={() => setToggleSettings((b) => !b)}>
-                <Icon type="menu"/>
-            </span>
-
-            <div className={`settings ${toggleSettings ? 'enabled' : ''}`}>
-
-            </div>
         </section>
     );
-    
 }
 
 export default Menu;

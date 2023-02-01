@@ -8,7 +8,6 @@
     --clr-acc-100: #be4622;
 
     --var-border-radius: 1rem;
-}
 
-[data-theme='dark']{
+    --clr-shadow: rgba(0, 0, 0, 0.4);
 }
