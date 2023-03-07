@@ -24,7 +24,7 @@ function App() {
         <BookCover id="weekly-book"/>
         <h3>Ukens bok</h3>
         <span id="timer">6d 3t 24m</span>
-        <span id="title">Title</span>
+        <span id="title">Title auf gaufmenchinnen</span>
         <span id="author">av Author von Bismarch</span>
       </section>
       

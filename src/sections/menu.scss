@@ -1,8 +1,8 @@
 .menu-section{
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
 
-    position: relative;
     padding: 1.5rem;
 
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.69)), url(https://cdn.discordapp.com/attachments/1058068137783865465/1059130178493747251/Geezmo_Illustration_of_vegetation_growing_out_of_books_lying_do_ed0f41a0-ca1d-410d-9866-f0c9043bcaa2.png);
@@ -27,5 +27,10 @@
             font-size: min(3vw, 1rem);
             opacity: 60%;
         }
+    }
+
+    .menu-symbol{
+        font-size: 3rem;
+        color: blue;
     }
 }
