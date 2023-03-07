@@ -1,19 +1,10 @@
 import React, {useState} from 'react'
-import Api from '../utils/fetchForrigebok'
+import './bookCover.scss'
 
 function BookCover(props: any){
-    if(props.book == undefined)
-        return <div className='book-cover' id={props.id}></div>
 
-    const [book, setBook] = useState(Api({
-        query: "978-82-419-6013-0",
-        limit: 1,
-    }));
-
-    const [readalikes, setReadalikes] = useState(Api({
-        isbn: props.isbn,
-        limit: 3,
-    }))
+    if(props.template == true || !props.books)
+        return <div className='book-cover book-cover-template' id={props.id}>?</div>
 
     return(
         <div className="book-cover" id={props.id}>

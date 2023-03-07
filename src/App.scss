@@ -18,6 +18,7 @@ body{
 
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
 .shadow{
@@ -25,20 +26,61 @@ body{
 }
 
 .gap{
+    margin-top: -1rem;
     height: 5px;
     box-shadow: 0 5px 6px var(--clr-shadow);
     background: linear-gradient(-90deg, var(--clr-acc-100), var(--clr-acc-200), var(--clr-acc-100));
     filter: brightness(130%);
 }
 
+#motd{
+    display: grid;
+    grid-row-gap: 5px;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto auto auto auto 1rem auto;
+
+    grid-template-areas:
+    "book ."
+    "book head"
+    "book titl"
+    "book auth"
+    "book ."
+    "timr .";
+
+    padding: 0 1rem;
+
+    #weekly-book{grid-area: book;}
+    h3{grid-area: head; display: none;}
+    #title{grid-area: titl;}
+    #author{grid-area: auth;}
+    #timer{grid-area: timr;}
+
+    #author, #title, #timer{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #author, #title{
+        font-size: min(4vw, 1.5rem);
+        width: fit-content;
+        padding: 0 2rem 0 1rem;
+        border-radius: 0 1rem 1rem 0;
+    }
+
+    #timer{
+        font-size: min(6vw, 2rem);
+        text-align: center;
+        border-radius: .8rem;
+    }
+}
+
 @media (min-width: 600px) {
     #root{
-        margin: max(1rem, 5vw) 1rem 1rem;
+        margin: max(-40vw, -400px) 1rem 1rem;
     }
 
     .menu-section{border-radius: 1rem 1rem .5rem .5rem;}
     .gap{
-        margin: 5px;
+        margin: calc(-1rem + 5px) 5px 5px 5px;
         border-radius: 2rem;
     }
 }

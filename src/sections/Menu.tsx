@@ -11,7 +11,6 @@ function Menu(props: any){
 
     return (
         <section className='menu-section shadow'>
-            <span className="background"></span>
             <span className="logo">
                 <span className='logo-title'>Ubok</span>
                 <span className="description">En kuratert samling av bokanbefalinger</span>
