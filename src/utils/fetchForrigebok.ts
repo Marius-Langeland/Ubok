@@ -4,7 +4,7 @@ export enum Type{
   Vocabulary = "vocabulary"
 }
 
-export const forrigebokFetcher = <T>(type: Type, params: {}) =>
+export default <T>(type: Type, params: {}) =>
   fetch(`https://forrigebok.no/api/v2023-01-12/${type}?${new URLSearchParams(params)}`, {
     headers: {
       "Client-Identifier": "Ubok - Røyken VGS (mariuslang@viken.no)",

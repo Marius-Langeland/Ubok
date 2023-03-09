@@ -6,15 +6,25 @@ import  "./utils/fetchForrigebok";
 import './utils/forrigebokAPI';
 import './App.scss';
 import { WorksResponse } from './utils/forrigebokAPI';
-import { forrigebokFetcher, Type } from './utils/fetchForrigebok';
+import API, { Type } from './utils/fetchForrigebok';
 
 function App() {
+  const [weekly, setWeekly] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  
 
-  const [weekly, setWeekly] = useState();
+  useEffect(() => {
+    setWeekly({});
+    setError(false);
+    setLoading(true);
 
-  //let weeklyBookPromise: Promise<WorksResponse> = forrigebokFetcher(Type.Work, {
-  //  isbn: "9788283731354"
-  //});
+
+    API<WorksResponse>(Type.Work, {isbn: "9788283731354"})
+      .then(setWeekly)
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <>
