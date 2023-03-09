@@ -30,7 +30,15 @@
     }
 
     .menu-symbol{
-        font-size: 3rem;
-        color: blue;
+        padding: 4px;
+        font-size: min(4.5vw, 2rem);
+        background-color: var(--clr-bgr-200);
+        border-radius: 100%;
+
+        transition: background-color .3s ease, box-shadow .1s ease;
+        &:hover{
+            background-color: var(--clr-acc-100);
+            box-shadow: 0 0 20px -5px white;
+        }
     }
 }

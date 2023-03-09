@@ -41,7 +41,7 @@ body{
 
     grid-template-areas:
     "book ."
-    "book head"
+    "book desc"
     "book titl"
     "book auth"
     "book ."
@@ -67,7 +67,7 @@ body{
     }
 
     #timer{
-        font-size: min(6vw, 2rem);
+        font-size: min(5vw, 1.8rem);
         text-align: center;
         border-radius: .8rem;
     }
