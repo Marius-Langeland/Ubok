@@ -1,5 +1,5 @@
 export enum Type{
-  Work = "work",
+  Work = "works",
   Readalikes = "readalikes",
   Vocabulary = "vocabulary"
 }
