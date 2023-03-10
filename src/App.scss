@@ -55,7 +55,7 @@ body{
     #timer{grid-area: timr; display: none;}
 
     #author, #title, #timer, h3{
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.3);
         padding: 0 2rem 0 1rem;
         width: fit-content;
         border-radius: 0 22rem 22rem 0;
@@ -95,7 +95,7 @@ body{
         justify-content: left;
         #progress{
             border-radius: 5rem;
-            flex-grow: .1;
+            flex-grow: .3;
             background-color: var(--clr-acc-200);
             box-shadow: 0 0 1rem var(--clr-acc-200);
             height: 100%;
