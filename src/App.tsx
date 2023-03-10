@@ -61,13 +61,17 @@ function App() {
 
   //#endregion
    
+  //#region Collection search
+  const [collections, setCollections] = useState<{}>();
+  //#endregion
+
   return (
     <>
       <Menu />
       <span className='gap'></span>
 
       <section id="motd">
-        <BookCover id="weekly-book" work={weekly?.works[0]}/>
+        <BookCover type="weekly" id="weekly-book" work={weekly?.works[0]}/>
         <h3>Ukens bok</h3>
         <span id="timer">6d 3t 24m</span>
         <span id="description">{weekly?.works[0].simplifiedPresentationMetadata.description}</span>
@@ -79,13 +83,13 @@ function App() {
         <span id='vote-text'>Stem på neste ukes bok!</span>
         <Icon type="hourglass_full"/>
         <span id="vote-timer"><span id="progress" /></span>
-        <div id="array">{books.weeklyVote.map((e, i) => <BookCover key={i} work={undefined}/>)}</div>
+        <div id="array">{books.weeklyVote.map((e, i) => <BookCover type="vote" key={i} work={undefined}/>)}</div>
       </section>
 
       <section id="search">
         <div id="search-form">
           <Icon type="search"/>
-          <form action="">
+          <form action="" onSubmit={(e) => {e.preventDefault(); setSearchQuery(e.currentTarget.value)}}>
             <input type="text" name="seach-bar" id="search-bar" placeholder='Søk etter noe spesielt'/>
           </form>
           <span id="filter"><Icon type="filter_list"/></span>
@@ -93,7 +97,7 @@ function App() {
         </div>
 
         <div id="search-result">
-          {search?.works.map((e, i) => <BookCover key={i} work={e}/>)}
+          {search?.works.map((e, i) => <BookCover type="search" key={i} work={e}/>)}
         </div>
       </section>
 

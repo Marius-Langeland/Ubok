@@ -10,4 +10,10 @@
     aspect-ratio: 2/3;
     border-radius: .8rem;
     box-shadow: 5px 5px 1.4rem rgba(0, 0, 0, 0.441);
+    cursor: pointer;
+}
+
+.vote-book-cover{
+    transition: transform .3s ease;
+    &:hover{transform: scale(97%);}
 }

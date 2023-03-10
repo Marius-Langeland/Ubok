@@ -23,6 +23,7 @@ body{
 .shadow{
     box-shadow: 0 0 4rem 4px var(--clr-shadow);
 }
+.clickable{cursor: pointer;}
 
 .gap{
     margin-top: -1rem;
@@ -138,18 +139,24 @@ body{
     #search-bar{
         all: unset;
         width: 100%;
+        pointer-events: all;
     }
     .filter_list-symbol{
         position: relative;
         top: 2px;
+        z-index: 1;
+        pointer-events: none;
     }
     #clr{
+        cursor: pointer;
         position: absolute;
         height: 100%;
         aspect-ratio: 1;
         right: -2px;
         background-color: rgba(0, 0, 0, 0.4);
-        z-index: -1;
+        transition: background-color .15s ease;
+
+        &:hover{background-color: rgba(0, 0, 0, 0.7);}
     }
 }
 
