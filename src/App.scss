@@ -72,8 +72,7 @@ body{
 
 #weekly-vote{
     display: grid;
-    column-gap:1rem;
-    grid-template-columns: auto 1fr 0;
+    grid-template-columns: auto auto 1fr 1rem;
 
     #vote-text, #array{
         background-color: rgba(0, 0, 0, 0.22);
@@ -81,7 +80,7 @@ body{
 
     #vote-text{
         width: fit-content;
-        padding: .5rem 1rem;
+        padding: .5rem 1.1rem;
         border-radius: 0 .5rem 0 0;
     }
 
@@ -103,8 +102,15 @@ body{
         }
     }
 
+    .hourglass_full-symbol{
+        align-self: center;
+        color: rgba(0, 0, 0, 0.25);
+        font-size: 2rem;
+        transform: rotate(10deg);
+    }
+
     #array{
-        grid-column: span 3;
+        grid-column: 1 / -1;
         display: flex;
         justify-content: space-between;
         gap: .5rem;
@@ -113,6 +119,37 @@ body{
         .book-cover{
             border-radius: .4rem;
         }
+    }
+}
+
+#search{
+    margin-top: 1rem;
+    #search-form{
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.25);
+        padding: 1rem;
+        gap: 1rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    form{width: 100%;}
+    #search-bar{
+        all: unset;
+        width: 100%;
+    }
+    .filter_list-symbol{
+        position: relative;
+        top: 2px;
+    }
+    #clr{
+        position: absolute;
+        height: 100%;
+        aspect-ratio: 1;
+        right: -2px;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: -1;
     }
 }
 
@@ -133,6 +170,10 @@ footer{
     #weekly-vote{
         #array{border-radius: 0 .8rem .8rem;}
         #vote-text{border-radius: .5rem .5rem 0 0;}
+    }
+
+    #search #search-form{
+        border-radius: .8rem;
     }
 }
     

@@ -19,26 +19,53 @@ const books = {
   ],
 }
 
+const collections = {
+
+}
+
 function App() {
-  const [weekly, setWeekly] = useState<WorksResponse | undefined>();
+  //#region Weekly book hooks
+  const [weekly, setWeekly] = useState<WorksResponse | undefined>(undefined);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   
   useEffect(() => {
-    setWeekly(undefined);
-    setError(false);
-    setLoading(true);
+    // Not necessary if useEffect is on mount
+    //setWeekly(undefined);
+    //setError(false);
+    //setLoading(true);
 
     API<WorksResponse>(Type.Work, {isbn: books.weekly})
       .then(setWeekly)
       .catch(() => setError(true))
       .finally(() => setLoading(false));
    }, []);
+   //#endregion
 
+  //#region Search book hooks
+  const [searchQuery, setSearchQuery] = useState("");
+  const [search, setSearch] = useState<WorksResponse | undefined>(undefined)
+  const [searchLoading, setSearchLoading] = useState(false)
+  const [searchError, setSearchError] = useState(false)
+
+  useEffect(() => {
+    setSearch(undefined);
+    setSearchLoading(true);
+    setSearchError(false);
+
+    API<WorksResponse>(Type.Work, {query: searchQuery})
+      .then(setSearch)
+      .catch(() => setSearchError(true))
+      .finally(() => setSearchLoading(false));
+   }, [searchQuery]);
+
+  //#endregion
+   
   return (
     <>
       <Menu />
       <span className='gap'></span>
+
       <section id="motd">
         <BookCover id="weekly-book" work={weekly?.works[0]}/>
         <h3>Ukens bok</h3>
@@ -50,8 +77,24 @@ function App() {
       
       <section id="weekly-vote">
         <span id='vote-text'>Stem på neste ukes bok!</span>
+        <Icon type="hourglass_full"/>
         <span id="vote-timer"><span id="progress" /></span>
         <div id="array">{books.weeklyVote.map((e, i) => <BookCover key={i} work={undefined}/>)}</div>
+      </section>
+
+      <section id="search">
+        <div id="search-form">
+          <Icon type="search"/>
+          <form action="">
+            <input type="text" name="seach-bar" id="search-bar" placeholder='Søk etter noe spesielt'/>
+          </form>
+          <span id="filter"><Icon type="filter_list"/></span>
+          <span id="clr"/>
+        </div>
+
+        <div id="search-result">
+          {search?.works.map((e, i) => <BookCover key={i} work={e}/>)}
+        </div>
       </section>
 
       <footer>
